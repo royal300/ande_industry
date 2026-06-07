@@ -167,4 +167,88 @@ export const productsData = [
       { label: 'Drive', value: 'Variable Speed VFD' },
     ],
   },
+  {
+    slug: 'crushing-sizing',
+    category: 'Crushing',
+    title: 'Crushing & Sizing Systems',
+    description: 'Comprehensive crushing and sizing solutions for primary and secondary reduction of various ores and materials.',
+    specs: [
+      { label: 'System Types', value: 'Primary, Secondary, Tertiary' },
+      { label: 'Capacity Range', value: '100 - 3000 t/h' },
+      { label: 'Automation', value: 'Fully Integrated PLC' },
+      { label: 'Key Equipment', value: 'Crushers, Screens, Feeders' },
+    ],
+  },
+  {
+    slug: 'grinding',
+    category: 'Grinding',
+    title: 'Grinding Solutions',
+    description: 'Advanced grinding systems tailored to meet the specific fineness and throughput requirements of the mining and cement industries.',
+    specs: [
+      { label: 'System Types', value: 'Dry and Wet Grinding' },
+      { label: 'Technology', value: 'VRM, Ball Mill, HPGR' },
+      { label: 'Control', value: 'Advanced Process Control' },
+      { label: 'Efficiency', value: 'High Energy Optimization' },
+    ],
+  },
+  {
+    slug: 'metering-conveying',
+    category: 'Conveying',
+    title: 'Metering & Conveying',
+    description: 'Reliable and accurate material handling systems ensuring consistent feed rates and safe transport of bulk solids.',
+    specs: [
+      { label: 'Conveying Types', value: 'Pneumatic, Mechanical' },
+      { label: 'Accuracy', value: 'Up to ±0.5%' },
+      { label: 'Material Types', value: 'Powders, Granules, Lumps' },
+      { label: 'Monitoring', value: 'Real-time flow tracking' },
+    ],
+  },
+  {
+    slug: 'pci-furnace-kiln',
+    category: 'Injection',
+    title: 'PCI for Furnace & Kiln',
+    description: 'State-of-the-art Pulverized Coal Injection systems optimizing fuel consumption and combustion efficiency in blast furnaces and kilns.',
+    specs: [
+      { label: 'Injection Rate', value: 'Up to 250 kg/thm' },
+      { label: 'Distribution', value: 'Highly Uniform' },
+      { label: 'Safety', value: 'Inert Gas Blanketing' },
+      { label: 'Control System', value: 'Fully Automated' },
+    ],
+  },
+  {
+    slug: 'environmental-dedusting',
+    category: 'Dedusting',
+    title: 'Environmental Dedusting',
+    description: 'High-performance filtration and dedusting systems designed to meet and exceed stringent environmental emission standards.',
+    specs: [
+      { label: 'Filter Media', value: 'High-temp, PTFE, Nomex' },
+      { label: 'Emission Levels', value: '< 5 mg/Nm³' },
+      { label: 'Cleaning System', value: 'Smart Pulse Jet' },
+      { label: 'Application', value: 'Plant-wide extraction' },
+    ],
+  },
+  {
+    slug: 'thermal-drying',
+    category: 'Thermal',
+    title: 'Thermal Drying Systems',
+    description: 'Efficient thermal drying systems for reducing moisture content in ores, coal, and concentrates prior to further processing.',
+    specs: [
+      { label: 'Dryer Types', value: 'Rotary, Fluid Bed' },
+      { label: 'Heat Source', value: 'Gas, Coal, Waste Heat' },
+      { label: 'Evaporation', value: 'Up to 50 t/h H₂O' },
+      { label: 'Exhaust Handling', value: 'Integrated Dedusting' },
+    ],
+  },
+  {
+    slug: 'calcining-smelting',
+    category: 'Calcining',
+    title: 'Calcining & Smelting',
+    description: 'Advanced calcining and smelting equipment for high-temperature processing of limestone, dolomite, and metallic ores.',
+    specs: [
+      { label: 'Kiln Types', value: 'Rotary Kiln, Shaft Kiln' },
+      { label: 'Temperature Range', value: '800°C - 1600°C' },
+      { label: 'Fuel Flexibility', value: 'Multi-fuel Burners' },
+      { label: 'Refractory', value: 'Premium Grade Alumina' },
+    ],
+  }
 ];
