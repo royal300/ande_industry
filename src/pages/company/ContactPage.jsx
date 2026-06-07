@@ -212,7 +212,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map Placeholder */}
-              <div className="w-full h-[380px] bg-cover bg-center rounded-[2px] flex flex-col items-center justify-center mb-6 relative overflow-hidden" style={{ backgroundImage: "url('/images/contact_side_1780751584165.png')" }}>
+              <div className="w-full h-[380px] bg-cover bg-center rounded-[2px] flex flex-col items-center justify-center mb-6 relative overflow-hidden" style={{ backgroundImage: "url('/images/contact_side_1780751584165.webp')" }}>
                  <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
               </div>
 

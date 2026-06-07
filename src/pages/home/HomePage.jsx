@@ -12,21 +12,21 @@ const slides = [
     title: 'Leading Metallurgical Equipment Solutions',
     subtitle: 'Engineering excellence for the global steel and mining industry.',
     cta: { label: 'Explore Technology', href: '/technology' },
-    image: '/images/hero_slide_1_1780751463278.png',
+    image: '/images/hero_slide_1_1780751463278.webp',
   },
   {
     id: 2,
     title: 'Precision Engineering. Proven Performance.',
     subtitle: 'Over 90 systems commissioned in top global steel plants.',
     cta: { label: 'View Our Products', href: '/products' },
-    image: '/images/hero_slide_2_1780751477217.png',
+    image: '/images/hero_slide_2_1780751477217.webp',
   },
   {
     id: 3,
     title: 'Innovation at Every Stage',
     subtitle: 'From design to commissioning — ANDE partners with you through the full project lifecycle.',
     cta: { label: 'Our Services', href: '/services' },
-    image: '/images/hero_slide_3_1780751488962.png',
+    image: '/images/hero_slide_3_1780751488962.webp',
   },
 ];
 
@@ -199,14 +199,14 @@ function StatsBar() {
 
 /* ──────────────── Technology Section ──────────────── */
 const homeTechData = [
-  { title: 'PCI for Furnace & Kiln', desc: 'Advanced Pulverized Coal Injection systems engineered for blast furnaces.', image: '/images/tech_pneumatic_1780751853220.png' },
-  { title: 'Grinding', desc: 'High-performance grinding solutions tailored for iron ore and coal.', image: '/images/tech_grinding_1780751799211.png' },
-  { title: 'Crushing & Sizing', desc: 'Robust crushing and screening equipment for primary and secondary reduction.', image: '/images/tech_crushing_1780751814463.png' },
-  { title: 'Drying & Preheating', desc: 'Custom-designed rotary drum dryers and preheaters for moisture removal.', image: '/images/tech_drying_1780751825785.png' },
-  { title: 'Feeding & Metering', desc: 'Precision weighing, feeding, and metering systems ensuring accurate dosing.', image: '/images/tech_feeding_1780751840036.png' },
-  { title: 'Pneumatic Conveying', desc: 'Dense-phase and dilute-phase pneumatic conveying systems.', image: '/images/tech_pneumatic_1780751853220.png' },
-  { title: 'Pelletizing', desc: 'Iron ore pelletizing technology from concentrate preparation to firing.', image: '/images/tech_drying_1780751825785.png' },
-  { title: 'Sintering', desc: 'Sinter plant engineering covering raw material blending and ignition.', image: '/images/tech_lime_1780751871313.png' },
+  { title: 'PCI for Furnace & Kiln', desc: 'Advanced Pulverized Coal Injection systems engineered for blast furnaces.', image: '/images/tech_pneumatic_1780751853220.webp' },
+  { title: 'Grinding', desc: 'High-performance grinding solutions tailored for iron ore and coal.', image: '/images/tech_grinding_1780751799211.webp' },
+  { title: 'Crushing & Sizing', desc: 'Robust crushing and screening equipment for primary and secondary reduction.', image: '/images/tech_crushing_1780751814463.webp' },
+  { title: 'Drying & Preheating', desc: 'Custom-designed rotary drum dryers and preheaters for moisture removal.', image: '/images/tech_drying_1780751825785.webp' },
+  { title: 'Feeding & Metering', desc: 'Precision weighing, feeding, and metering systems ensuring accurate dosing.', image: '/images/tech_feeding_1780751840036.webp' },
+  { title: 'Pneumatic Conveying', desc: 'Dense-phase and dilute-phase pneumatic conveying systems.', image: '/images/tech_pneumatic_1780751853220.webp' },
+  { title: 'Pelletizing', desc: 'Iron ore pelletizing technology from concentrate preparation to firing.', image: '/images/tech_drying_1780751825785.webp' },
+  { title: 'Sintering', desc: 'Sinter plant engineering covering raw material blending and ignition.', image: '/images/tech_lime_1780751871313.webp' },
 ];
 
 function HomeTechnology() {
@@ -266,9 +266,9 @@ function PerformanceSection() {
   const projects = trackRecordData[activeTab];
 
   const tabImages = {
-    metallurgical: '/images/hero_slide_1_1780751463278.png',
-    power: '/images/tech_drying_1780751825785.png',
-    mining: '/images/tech_grinding_1780751799211.png'
+    metallurgical: '/images/hero_slide_1_1780751463278.webp',
+    power: '/images/tech_drying_1780751825785.webp',
+    mining: '/images/tech_grinding_1780751799211.webp'
   };
 
   const handleTabChange = (tab) => {
@@ -363,7 +363,7 @@ function ServicesSection() {
   return (
     <section 
       className="py-20 w-full relative bg-cover bg-center" 
-      style={{ backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('/images/services_bg_1780751502543.png')` }}
+      style={{ backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('/images/services_bg_1780751502543.webp')` }}
     >
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -412,7 +412,7 @@ function InnovationSection() {
     <section className="py-20" style={{ background: '#f5f7fa' }}>
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left: Image Placeholder */}
-        <div className="h-[460px] rounded-sm relative overflow-hidden flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url('/images/innovation_side_1780751516550.png')` }}>
+        <div className="h-[460px] rounded-sm relative overflow-hidden flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url('/images/innovation_side_1780751516550.webp')` }}>
           <div className="absolute inset-0 bg-blue-900 opacity-20 mix-blend-multiply" />
         </div>
         
@@ -458,9 +458,9 @@ function InnovationSection() {
 
 /* ──────────────── News Section ──────────────── */
 const homeNewsData = [
-  { cat: 'COMPANY', title: 'ANDE Expands Manufacturing Facility in Jinan', date: 'Oct 12, 2025', excerpt: 'The new 10,000 m² workshop will increase our heavy equipment production capacity by 30%.', image: '/images/news_card_1_1780751530210.png' },
-  { cat: 'PROJECT STATUS', title: 'Successful Commissioning of 5000t/d Lime Kiln', date: 'Sep 28, 2025', excerpt: 'The turnkey active lime plant for TATA Steel achieved full capacity during performance tests.', image: '/images/news_card_2_1780751543543.png' },
-  { cat: 'INDUSTRY NEWS', title: 'New Regulations Drive Demand for Ultra-Low Emission Systems', date: 'Aug 15, 2025', excerpt: 'Recent environmental standards are accelerating the adoption of our advanced bag filter technologies.', image: '/images/news_card_3_1780751556923.png' },
+  { cat: 'COMPANY', title: 'ANDE Expands Manufacturing Facility in Jinan', date: 'Oct 12, 2025', excerpt: 'The new 10,000 m² workshop will increase our heavy equipment production capacity by 30%.', image: '/images/news_card_1_1780751530210.webp' },
+  { cat: 'PROJECT STATUS', title: 'Successful Commissioning of 5000t/d Lime Kiln', date: 'Sep 28, 2025', excerpt: 'The turnkey active lime plant for TATA Steel achieved full capacity during performance tests.', image: '/images/news_card_2_1780751543543.webp' },
+  { cat: 'INDUSTRY NEWS', title: 'New Regulations Drive Demand for Ultra-Low Emission Systems', date: 'Aug 15, 2025', excerpt: 'Recent environmental standards are accelerating the adoption of our advanced bag filter technologies.', image: '/images/news_card_3_1780751556923.webp' },
 ];
 
 function NewsSection() {

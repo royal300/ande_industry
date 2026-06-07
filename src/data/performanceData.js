@@ -8,7 +8,7 @@ export const performanceData = [
     location: 'Jamshedpur, India',
     capacity: '600 tons/day',
     year: '2025',
-    image: '/images/tech_lime_1780751871313.png',
+    image: '/images/tech_lime_1780751871313.webp',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ export const performanceData = [
     location: 'Pohang, South Korea',
     capacity: '400 m² grate area',
     year: '2024',
-    image: '/images/hero_slide_1_1780751463278.png',
+    image: '/images/hero_slide_1_1780751463278.webp',
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ export const performanceData = [
     location: 'Dung Quat, Vietnam',
     capacity: '120 tons/hour',
     year: '2023',
-    image: '/images/tech_pneumatic_1780751853220.png',
+    image: '/images/tech_pneumatic_1780751853220.webp',
   },
   
   // Power Generation (3)
@@ -40,7 +40,7 @@ export const performanceData = [
     location: 'Barh, India',
     capacity: '5 x 660 MW',
     year: '2025',
-    image: '/images/tech_grinding_1780751799211.png',
+    image: '/images/tech_grinding_1780751799211.webp',
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ export const performanceData = [
     location: 'Mailiao, Taiwan',
     capacity: '150 tons/hour',
     year: '2022',
-    image: '/images/tech_pneumatic_1780751853220.png',
+    image: '/images/tech_pneumatic_1780751853220.webp',
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ export const performanceData = [
     location: 'Datong, China',
     capacity: '80 tons/hour',
     year: '2021',
-    image: '/images/tech_feeding_1780751840036.png',
+    image: '/images/tech_feeding_1780751840036.webp',
   },
   
   // Mining/Chemical/Beneficiation (3)
@@ -72,7 +72,7 @@ export const performanceData = [
     location: 'Pilbara, Australia',
     capacity: '3000 tons/hour',
     year: '2024',
-    image: '/images/tech_crushing_1780751814463.png',
+    image: '/images/tech_crushing_1780751814463.webp',
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ export const performanceData = [
     location: 'Tsumeb, Namibia',
     capacity: '150,000 t/a',
     year: '2023',
-    image: '/images/hero_slide_2_1780751477217.png',
+    image: '/images/hero_slide_2_1780751477217.webp',
   },
   {
     id: 9,
@@ -92,6 +92,6 @@ export const performanceData = [
     location: 'Rayong, Thailand',
     capacity: '20 tons/hour',
     year: '2022',
-    image: '/images/tech_drying_1780751825785.png',
+    image: '/images/tech_drying_1780751825785.webp',
   },
 ];

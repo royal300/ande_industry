@@ -5,7 +5,7 @@ export const technologyData = [
     category: 'Thermal Processing',
     description: 'Advanced Pulverized Coal Injection systems engineered for blast furnaces and rotary kilns, delivering precise coal metering, transport, and injection with energy efficiency and reliability.',
     features: ['Precise coal rate control', 'Multi-lance injection systems', 'Integrated safety interlocks', 'Real-time monitoring'],
-    image: '/images/tech_pneumatic_1780751853220.png',
+    image: '/images/tech_pneumatic_1780751853220.webp',
   },
   {
     slug: 'grinding',
@@ -13,7 +13,7 @@ export const technologyData = [
     category: 'Size Reduction',
     description: 'High-performance grinding solutions including ball mills, vertical roller mills, and ultrafine classifiers tailored for iron ore, coal, limestone, and industrial minerals.',
     features: ['Ball mill systems', 'Vertical roller mills', 'Ultrafine grinding', 'Closed-circuit grinding'],
-    image: '/images/tech_grinding_1780751799211.png',
+    image: '/images/tech_grinding_1780751799211.webp',
   },
   {
     slug: 'crushing-sizing',
@@ -21,7 +21,7 @@ export const technologyData = [
     category: 'Size Reduction',
     description: 'Robust crushing and screening equipment for primary, secondary, and tertiary reduction of ores, coal, coke, and other bulk materials in metallurgical process lines.',
     features: ['Jaw crushers', 'Cone crushers', 'Impact crushers', 'Vibrating screens'],
-    image: '/images/tech_crushing_1780751814463.png',
+    image: '/images/tech_crushing_1780751814463.webp',
   },
   {
     slug: 'drying-preheating',
@@ -29,7 +29,7 @@ export const technologyData = [
     category: 'Thermal Processing',
     description: 'Custom-designed rotary drum dryers and preheaters for removing moisture and elevating temperature of raw materials before downstream processing.',
     features: ['Rotary drum dryers', 'Flash dryers', 'Fluidized bed dryers', 'Heat recovery systems'],
-    image: '/images/tech_drying_1780751825785.png',
+    image: '/images/tech_drying_1780751825785.webp',
   },
   {
     slug: 'feeding-metering',
@@ -37,7 +37,7 @@ export const technologyData = [
     category: 'Material Handling',
     description: 'Precision weighing, feeding, and metering systems ensuring accurate raw material dosing for consistent process control across all metallurgical operations.',
     features: ['Belt weighfeeders', 'Screw feeders', 'Rotary feeders', 'Loss-in-weight systems'],
-    image: '/images/tech_feeding_1780751840036.png',
+    image: '/images/tech_feeding_1780751840036.webp',
   },
   {
     slug: 'pneumatic-conveying',
@@ -45,7 +45,7 @@ export const technologyData = [
     category: 'Material Handling',
     description: 'Dense-phase and dilute-phase pneumatic conveying systems for dust, powders, and granular materials — eliminating spillage and enabling long-distance transport.',
     features: ['Dense-phase systems', 'Dilute-phase systems', 'Pressurized vessels', 'Pipe routing design'],
-    image: '/images/tech_pneumatic_1780751853220.png',
+    image: '/images/tech_pneumatic_1780751853220.webp',
   },
   {
     slug: 'active-lime',
@@ -53,7 +53,7 @@ export const technologyData = [
     category: 'Calcining',
     description: 'Complete active lime production lines integrating rotary kilns, preheaters, coolers, and dust collectors for high-activity lime critical to steelmaking and chemical processes.',
     features: ['Vertical preheaters', 'Rotary kilns', 'Vertical coolers', 'Emission controls'],
-    image: '/images/tech_lime_1780751871313.png',
+    image: '/images/tech_lime_1780751871313.webp',
   },
   {
     slug: 'pelletizing',
@@ -61,7 +61,7 @@ export const technologyData = [
     category: 'Agglomeration',
     description: 'Iron ore pelletizing technology from concentrate preparation to firing — disc pelletizers, travelling grate, and rotary kiln systems for high-quality blast furnace pellets.',
     features: ['Disc pelletizers', 'Travelling grate systems', 'Rotary kiln firing', 'Annular coolers'],
-    image: '/images/tech_drying_1780751825785.png',
+    image: '/images/tech_drying_1780751825785.webp',
   },
   {
     slug: 'sintering',
@@ -69,7 +69,7 @@ export const technologyData = [
     category: 'Agglomeration',
     description: 'Sinter plant engineering covering raw material blending, ignition, strand sintering, cooling, and screening for optimized sinter quality and productivity.',
     features: ['Sinter strand design', 'Ignition furnaces', 'Sinter coolers', 'Emission controls'],
-    image: '/images/tech_lime_1780751871313.png',
+    image: '/images/tech_lime_1780751871313.webp',
   },
   {
     slug: 'bf-ironmaking',
@@ -77,7 +77,7 @@ export const technologyData = [
     category: 'Ironmaking',
     description: 'Blast furnace ironmaking auxiliary systems including top gas recovery, hot blast stoves, cast house equipment, and digital monitoring for maximized productivity.',
     features: ['Top gas recovery', 'Hot blast stoves', 'Cast house automation', 'BF monitoring'],
-    image: '/images/tech_lime_1780751871313.png',
+    image: '/images/tech_lime_1780751871313.webp',
   },
   {
     slug: 'flue-gas-purification',
@@ -85,7 +85,7 @@ export const technologyData = [
     category: 'Environmental',
     description: 'Comprehensive flue gas cleaning systems — bag filters, electrostatic precipitators, desulfurization, and denitrification — meeting the strictest emission standards.',
     features: ['Bag filter systems', 'Electrostatic precipitators', 'Desulfurization (FGD)', 'SCR DeNOx'],
-    image: '/images/tech_pneumatic_1780751853220.png',
+    image: '/images/tech_pneumatic_1780751853220.webp',
   },
   {
     slug: 'beneficiation',
@@ -93,6 +93,6 @@ export const technologyData = [
     category: 'Ore Processing',
     description: 'Full ore beneficiation engineering from crushing and grinding to magnetic separation, flotation, and dewatering for iron ore, copper, gold, and industrial minerals.',
     features: ['Magnetic separation', 'Flotation circuits', 'Gravity separation', 'Dewatering systems'],
-    image: '/images/tech_grinding_1780751799211.png',
+    image: '/images/tech_grinding_1780751799211.webp',
   },
 ];

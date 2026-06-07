@@ -23,7 +23,7 @@ export default function CompanyPage() {
       {/* About Section */}
       <section className="py-20" style={{ background: '#fff' }}>
         <div className="max-w-7xl mx-auto px-6 mb-16">
-           <img src="/images/company_main_1780751570190.png" alt="Company Facility" className="w-full h-[400px] object-cover rounded shadow-md mb-8" />
+           <img src="/images/company_main_1780751570190.webp" alt="Company Facility" className="w-full h-[400px] object-cover rounded shadow-md mb-8" />
         </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>

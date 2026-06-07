@@ -1,0 +1,16 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+spawn bash -c "ssh root@93.127.206.52 'bash -s' < remote_setup.sh"
+
+expect {
+    "yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "*assword:*" {
+        send "Royal300@2026\r"
+    }
+}
+
+expect eof
