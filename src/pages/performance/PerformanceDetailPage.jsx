@@ -2,11 +2,11 @@ import { useParams } from 'react-router-dom';
 import PageHero from '../../components/common/PageHero';
 import SectionHeader from '../../components/common/SectionHeader';
 import PrimaryButton from '../../components/common/PrimaryButton';
-import { performanceData } from '../../data/performanceData';
+import { performanceDetailData } from '../../data/performanceData';
 
 export default function PerformanceDetailPage() {
   const { industry } = useParams();
-  const data = performanceData[industry];
+  const data = performanceDetailData[industry];
 
   if (!data) {
     return (

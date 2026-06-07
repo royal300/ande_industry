@@ -95,3 +95,104 @@ export const performanceData = [
     image: '/images/tech_drying_1780751825785.webp',
   },
 ];
+
+export const performanceDetailData = {
+  'metallurgical': {
+    industry: 'Metallurgical Industry',
+    description: 'Delivering robust equipment and EPC services for iron and steel production.',
+    stats: [
+      { label: 'Completed Projects', value: '45+' },
+      { label: 'Countries Served', value: '12' },
+      { label: 'Years Experience', value: '30+' }
+    ],
+    projects: [
+      {
+        name: '600 t/d Active Lime Kiln Plant',
+        location: 'Jamshedpur, India',
+        capacity: '600 tons/day',
+        year: '2025'
+      },
+      {
+        name: '400 m² Sintering Line Upgrade',
+        location: 'Pohang, South Korea',
+        capacity: '400 m² grate area',
+        year: '2024'
+      },
+      {
+        name: '3500m³ Blast Furnace PCI System',
+        location: 'Dung Quat, Vietnam',
+        capacity: '120 tons/hour',
+        year: '2023'
+      }
+    ]
+  },
+  'power-generation': {
+    industry: 'Power Generation',
+    description: 'Providing reliable coal milling and ash handling systems for thermal power plants.',
+    stats: [
+      { label: 'Completed Projects', value: '30+' },
+      { label: 'MW Installed Capacity', value: '50k+' },
+      { label: 'Years Experience', value: '25+' }
+    ],
+    projects: [
+      {
+        name: '5x660MW Coal Milling System',
+        location: 'Barh, India',
+        capacity: '5 x 660 MW',
+        year: '2025'
+      },
+      {
+        name: 'Fly Ash Pneumatic Conveying',
+        location: 'Mailiao, Taiwan',
+        capacity: '150 tons/hour',
+        year: '2022'
+      },
+      {
+        name: 'Boiler PCI Retrofit Project',
+        location: 'Datong, China',
+        capacity: '80 tons/hour',
+        year: '2021'
+      }
+    ]
+  },
+  'beneficiation': {
+    industry: 'Beneficiation Industry',
+    description: 'Advanced crushing and grinding solutions for maximum mineral recovery.',
+    stats: [
+      { label: 'Completed Projects', value: '25+' },
+      { label: 'Ore Processed (MT)', value: '100+' },
+      { label: 'Years Experience', value: '20+' }
+    ],
+    projects: [
+      {
+        name: 'Iron Ore Beneficiation Plant',
+        location: 'Pilbara, Australia',
+        capacity: '3000 tons/hour',
+        year: '2024'
+      }
+    ]
+  },
+  'chemical': {
+    industry: 'Chemical Industry',
+    description: 'Specialized thermal drying and material handling for sensitive chemical compounds.',
+    stats: [
+      { label: 'Completed Projects', value: '15+' },
+      { label: 'Process Types', value: '8+' },
+      { label: 'Years Experience', value: '15+' }
+    ],
+    projects: [
+      {
+        name: 'Lead Smelting Process Integration',
+        location: 'Tsumeb, Namibia',
+        capacity: '150,000 t/a',
+        year: '2023'
+      },
+      {
+        name: 'Chemical Powder Drying Line',
+        location: 'Rayong, Thailand',
+        capacity: '20 tons/hour',
+        year: '2022'
+      }
+    ]
+  }
+};
