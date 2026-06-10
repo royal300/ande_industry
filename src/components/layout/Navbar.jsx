@@ -27,13 +27,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
         
         {/* Logo Area */}
-        <Link to="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
-          <div className="w-10 h-10 rounded-sm flex items-center justify-center" style={{ background: '#1e5fa3' }}>
-            <span className="text-white font-bold text-xl" style={{ fontFamily: 'Barlow, sans-serif' }}>A</span>
-          </div>
-          <span className="text-white font-bold text-xl tracking-wide" style={{ fontFamily: 'Barlow, sans-serif' }}>
-            ANDE<span style={{ color: '#1e5fa3' }}>.</span>
-          </span>
+        <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+          <img src="/logo.png" alt="ANDE Industries" style={{ height: '52px', width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -137,16 +132,11 @@ export default function Navbar() {
       >
         {/* Drawer Header */}
         <div className="p-5 flex items-center justify-between border-b border-gray-100 bg-[#0d1b2a] text-white">
-          <Link to="/" className="flex items-center gap-3" onClick={() => {
+          <Link to="/" className="flex items-center" onClick={() => {
             setMobileMenuOpen(false);
             setMobileActiveDropdown(null);
           }}>
-            <div className="w-8 h-8 rounded-sm flex items-center justify-center bg-[#1e5fa3]">
-              <span className="text-white font-bold text-lg" style={{ fontFamily: 'Barlow, sans-serif' }}>A</span>
-            </div>
-            <span className="text-white font-bold text-lg tracking-wide" style={{ fontFamily: 'Barlow, sans-serif' }}>
-              ANDE<span className="text-[#1e5fa3]">.</span>
-            </span>
+            <img src="/logo.png" alt="ANDE Industries" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
           </Link>
           <button 
             className="text-white p-1 hover:bg-white/10 rounded transition-colors"

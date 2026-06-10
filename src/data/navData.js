@@ -92,18 +92,6 @@ export const navItems = [
   {
     label: 'Company',
     href: '/company',
-    dropdown: {
-      heading: 'About ANDE',
-      seeAllHref: '/company',
-      links: [
-        { label: 'Company Profile', href: '/company' },
-        { label: 'Culture', href: '/company/culture' },
-        { label: 'Honor & Qualification', href: '/company/honor' },
-        { label: 'Company Appearance', href: '/company/appearance' },
-        { label: 'Manufacturing Facilities', href: '/company/manufacturing' },
-        { label: 'Contact Us', href: '/company/contact' },
-        { label: 'News', href: '/news' },
-      ],
-    },
+    dropdown: null,
   },
 ];

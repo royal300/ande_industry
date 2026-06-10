@@ -92,21 +92,14 @@ export default function Footer() {
 
           {/* Column 1 — Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-5">
-              <span
-                className="inline-block flex-shrink-0"
-                style={{ width: 10, height: 10, background: '#1e5fa3', borderRadius: 1 }}
-              />
-              <span
-                className="text-white font-bold"
-                style={{ fontFamily: 'Barlow, sans-serif', fontSize: 20 }}
-              >
-                ANDE INDUSTRIES
-              </span>
+            <Link to="/" className="inline-block mb-5">
+              <img src="/logo.png" alt="ANDE Industries" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
             </Link>
-            <div className="space-y-2" style={{ color: '#aaaaaa', fontSize: 13, lineHeight: 1.8 }}>
-              <p>Future Square, No.55 Industrial South Road,</p>
-              <p>High-tech Zone, Jinan, China</p>
+            <div className="space-y-1" style={{ color: '#aaaaaa', fontSize: 13, lineHeight: 1.8 }}>
+              <p>Ande Industries Pvt. Ltd.</p>
+              <p>Merlin Infinite, DN 51, Unit No.1303,</p>
+              <p>13th Floor, Sector V, Salt Lake,</p>
+              <p>Kolkata 700091</p>
               <p className="mt-3">
                 <a
                   href="tel:+8605318332393"
