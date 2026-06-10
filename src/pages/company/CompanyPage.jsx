@@ -15,7 +15,7 @@ export default function CompanyPage() {
         <img
           src="/images/ande_image.jpg"
           alt="Ande Industries"
-          style={{ width: '100%', height: '480px', objectFit: 'cover', display: 'block' }}
+          style={{ width: '100%', height: '480px', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
         />
       </div>
 

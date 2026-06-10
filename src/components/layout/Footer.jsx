@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <Link to="/" className="inline-block mb-5">
-              <img src="/logo.png" alt="ANDE Industries" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/logo.png" alt="ANDE Industries" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
             </Link>
             <div className="space-y-1" style={{ color: '#aaaaaa', fontSize: 13, lineHeight: 1.8 }}>
               <p>Ande Industries Pvt. Ltd.</p>
