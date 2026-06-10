@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <Link to="/" className="inline-block mb-5">
-              <img src="/logo.png" alt="ANDE Industries" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/logo.png" alt="ANDE Industries" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
             </Link>
             <div className="space-y-1" style={{ color: '#aaaaaa', fontSize: 13, lineHeight: 1.8 }}>
               <p>Ande Industries Pvt. Ltd.</p>
@@ -102,25 +102,18 @@ export default function Footer() {
               <p>Kolkata 700091</p>
               <p className="mt-3">
                 <a
-                  href="tel:+8605318332393"
+                  href="tel:+919836064375"
                   className="transition-colors duration-200"
                   style={{ color: '#aaaaaa' }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#aaaaaa'; }}
                 >
-                  +86-0531-83323931
+                  +91 9836064375
                 </a>
               </p>
-              <p>
-                <a
-                  href="mailto:info@andeindustries.com"
-                  className="transition-colors duration-200"
-                  style={{ color: '#aaaaaa' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = '#aaaaaa'; }}
-                >
-                  info@andeindustries.com
-                </a>
+              <p className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', color: '#888', fontSize: 12 }}>
+                Mother Company:<br />
+                <span style={{ color: '#aaaaaa' }}>Ande Metallurgical Machinery Co. Ltd.,<br />Jinan, China</span>
               </p>
             </div>
           </div>

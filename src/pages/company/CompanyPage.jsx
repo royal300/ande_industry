@@ -13,8 +13,8 @@ export default function CompanyPage() {
       {/* Hero Image */}
       <div className="w-full" style={{ maxHeight: '480px', overflow: 'hidden' }}>
         <img
-          src="/images/company_main_1780751570190.webp"
-          alt="Ande Industries Facility"
+          src="/images/ande_image.jpg"
+          alt="Ande Industries"
           style={{ width: '100%', height: '480px', objectFit: 'cover', display: 'block' }}
         />
       </div>

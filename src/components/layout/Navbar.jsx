@@ -28,7 +28,7 @@ export default function Navbar() {
         
         {/* Logo Area */}
         <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-          <img src="/logo.png" alt="ANDE Industries" style={{ height: '52px', width: 'auto', objectFit: 'contain' }} />
+          <img src="/logo.png" alt="ANDE Industries" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Navigation */}
