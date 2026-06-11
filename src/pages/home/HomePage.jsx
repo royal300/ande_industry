@@ -11,7 +11,7 @@ const slides = [
     id: 1,
     title: 'Leading Metallurgical Equipment Solutions',
     subtitle: 'Engineering excellence for the global steel and mining industry.',
-    cta: { label: 'Explore Technology', href: '/technology' },
+    cta: { label: 'View Our Products', href: '/products' },
     image: '/images/hero_slide_1_1780751463278.webp',
   },
   {

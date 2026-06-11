@@ -32,7 +32,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-1 justify-center h-full items-center space-x-1 lg:pr-[112px]">
+        <div className="hidden md:flex flex-1 justify-end h-full items-center space-x-1">
           {navData.map((item) => (
             <div
               key={item.label}
