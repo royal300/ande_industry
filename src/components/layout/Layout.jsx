@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import PageTransition from './PageTransition';
 import BackToTop from '../common/BackToTop';
+import EnquiryFloat from '../common/EnquiryFloat';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ export default function Layout({ children }) {
       </main>
       <Footer />
       <BackToTop />
+      <EnquiryFloat />
     </div>
   );
 }

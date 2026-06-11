@@ -34,7 +34,7 @@ export default function ContactPage() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     
@@ -45,11 +45,35 @@ export default function ContactPage() {
 
     setStatus('loading');
     
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', company: '', email: '', phone: '', country: 'Select Country', subject: 'General Inquiry', message: '' });
-    }, 1500);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/karamit819@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Company: formData.company,
+          Email: formData.email,
+          Phone: formData.phone,
+          Country: formData.country,
+          Subject: formData.subject,
+          Message: formData.message,
+          _subject: `New Contact Inquiry: ${formData.subject} - ANDE Industries`,
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', company: '', email: '', phone: '', country: 'Select Country', subject: 'General Inquiry', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -152,6 +176,12 @@ export default function ContactPage() {
                     {errors.message && <p className="text-red-500 text-[12px] mt-1">{errors.message}</p>}
                   </div>
 
+                  {status === 'error' && (
+                    <p className="text-red-500 text-xs font-semibold mb-4">
+                      Failed to send message. Please try again or contact us directly.
+                    </p>
+                  )}
+
                   <button 
                     type="submit" 
                     disabled={status === 'loading'}
@@ -167,62 +197,68 @@ export default function ContactPage() {
             </div>
 
             {/* Right Col: Contact Info (45%) */}
-            <div className="w-full lg:w-[45%] flex flex-col justify-between">
+            <div className="w-full lg:w-[45%] space-y-8">
               
-              <div className="space-y-6 mb-10">
-                <div className="flex items-start gap-4">
-                  <div className="w-[40px] h-[40px] rounded bg-[#e8f0fb] flex items-center justify-center flex-shrink-0">
-                    <svg width="20" height="20" fill="none" stroke="#1e5fa3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
-                  </div>
-                  <div>
-                    <strong className="block text-[#1a1a2a] text-[15px] mb-1">Headquarters Address</strong>
-                    <span className="text-[#666] text-[14px]">No.55 Industrial South Road, High-tech Zone,<br/>Jinan, Shandong Province, China</span>
-                  </div>
+              {/* Card 1: Ande Industries Pvt. Ltd. */}
+              <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-[#1e5fa3] mb-4 flex items-center gap-2" style={{ fontFamily: 'Barlow, sans-serif' }}>
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                  Ande Industries Pvt. Ltd.
+                </h3>
+                <div className="text-gray-600 text-sm space-y-1 leading-relaxed font-sans">
+                  <p className="font-semibold text-gray-800">Kolkata Office</p>
+                  <p>Merlin Infinite, DN 51, Unit No.1303,</p>
+                  <p>13th Floor, Sector V, Salt Lake,</p>
+                  <p>Kolkata 700091, West Bengal, India</p>
                 </div>
+              </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-[40px] h-[40px] rounded bg-[#e8f0fb] flex items-center justify-center flex-shrink-0">
-                    <svg width="20" height="20" fill="none" stroke="#1e5fa3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  </div>
+              {/* Card 2: Mother Company */}
+              <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-[#1e5fa3] mb-4 flex items-center gap-2" style={{ fontFamily: 'Barlow, sans-serif' }}>
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+                  Mother Company
+                </h3>
+                <div className="text-gray-600 text-sm space-y-4 leading-relaxed font-sans">
                   <div>
-                    <strong className="block text-[#1a1a2a] text-[15px] mb-1">Phone</strong>
-                    <span className="text-[#666] text-[14px]">+86-0531-83323931 (Sales)<br/>+86-400-800-1234 (24/7 Support)</span>
+                    <p className="font-semibold text-gray-800">Ande Metallurgical Machinery Co. Ltd. (Head Office)</p>
+                    <p>Address: Future Square, No. 55 Industrial South Road, High-tech Zone, Jinan, China</p>
+                    <p>Tel: +86-531-8894 8601</p>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-[40px] h-[40px] rounded bg-[#e8f0fb] flex items-center justify-center flex-shrink-0">
-                    <svg width="20" height="20" fill="none" stroke="#1e5fa3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M22 6l-10 7L2 6" /></svg>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="font-semibold text-gray-800">Works</p>
+                    <p>Address: Chengdong Industrial Park, Jingshi East Road, Zhangqiu, Jinan, China</p>
+                    <p>Tel: +86-531-8332 3930</p>
                   </div>
-                  <div>
-                    <strong className="block text-[#1a1a2a] text-[15px] mb-1">Email</strong>
-                    <span className="text-[#666] text-[14px]">info@andeindustries.com<br/>service@andeindustries.com</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-[40px] h-[40px] rounded bg-[#e8f0fb] flex items-center justify-center flex-shrink-0">
-                    <svg width="20" height="20" fill="none" stroke="#1e5fa3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
-                  </div>
-                  <div>
-                    <strong className="block text-[#1a1a2a] text-[15px] mb-1">Business Hours</strong>
-                    <span className="text-[#666] text-[14px]">Monday - Friday: 8:30 AM - 5:30 PM (CST)</span>
+                  <div className="pt-3 border-t border-gray-200 space-y-1">
+                    <p>
+                      <strong>Website:</strong> <a href="http://www.andeindustries.com" target="_blank" rel="noreferrer" className="text-[#1e5fa3] hover:underline">www.andeindustries.com</a>
+                    </p>
+                    <p>
+                      <strong>Email:</strong> <a href="mailto:huangfan@andeindustries.com" className="text-[#1e5fa3] hover:underline">huangfan@andeindustries.com</a> / <a href="mailto:sales@andeindustries.com" className="text-[#1e5fa3] hover:underline">sales@andeindustries.com</a>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="w-full h-[380px] bg-cover bg-center rounded-[2px] flex flex-col items-center justify-center mb-6 relative overflow-hidden" style={{ backgroundImage: "url('/images/contact_side_1780751584165.webp')" }}>
-                 <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-              </div>
-
-              {/* Social Links */}
-              <div className="flex gap-4 items-center">
-                 {['LinkedIn', 'Twitter', 'Facebook', 'YouTube', 'WeChat'].map(s => (
-                   <div key={s} className="w-[36px] h-[36px] bg-[#f5f7fa] border border-[#e8e8e8] rounded flex items-center justify-center cursor-pointer transition-colors hover:bg-[#1e5fa3] hover:text-white text-[#666]">
-                     <span className="text-[12px] font-bold">{s[0]}</span>
-                   </div>
-                 ))}
+              {/* Card 3: Key Personnel Contacts */}
+              <div className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-[#1e5fa3] mb-4 flex items-center gap-2" style={{ fontFamily: 'Barlow, sans-serif' }}>
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                  Direct Contacts
+                </h3>
+                <div className="text-gray-600 text-sm space-y-4 leading-relaxed font-sans">
+                  <div>
+                    <p className="font-semibold text-gray-800">Huang Fan</p>
+                    <p>Mobile: 914771157</p>
+                    <p>Email: <a href="mailto:huangfan@andeindustries.com" className="text-[#1e5fa3] hover:underline">huangfan@andeindustries.com</a></p>
+                  </div>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="font-semibold text-gray-800">Ashok Kumar Sengupta</p>
+                    <p>Mobile: 9937294464 / 8319158089</p>
+                    <p>Email: <a href="mailto:ashok@andeitpl.com" className="text-[#1e5fa3] hover:underline">ashok@andeitpl.com</a></p>
+                  </div>
+                </div>
               </div>
 
             </div>
