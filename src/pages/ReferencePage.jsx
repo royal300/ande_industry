@@ -15,7 +15,7 @@ export default function ReferencePage() {
         breadcrumb="Home / Reference"
       />
 
-      <section className="py-16 md:py-24" style={{ background: '#f8f9fa' }}>
+      <section className="pt-8 pb-16 md:pt-10 md:pb-24" style={{ background: '#f8f9fa' }}>
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             label="TRACK RECORD"
@@ -23,8 +23,16 @@ export default function ReferencePage() {
             centered
           />
 
+          {/* Mobile swipe helper */}
+          <div className="lg:hidden flex items-center justify-end text-xs text-[#1e5fa3] font-semibold mt-6 mb-2 gap-1 animate-pulse">
+            <span>Swipe to see more categories</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+
           {/* Navigation Tabs */}
-          <div className="mt-12 mb-8 flex justify-start lg:justify-center overflow-x-auto pb-4 gap-2 scrollbar-hide border-b border-gray-200">
+          <div className="mb-8 flex justify-start lg:justify-center overflow-x-auto pb-4 gap-2 scrollbar-hide border-b border-gray-200">
             {referenceData.map((tab, idx) => (
               <button
                 key={idx}
@@ -42,7 +50,10 @@ export default function ReferencePage() {
           </div>
 
           {/* Active Tab Content */}
-          <AnimatedSection className="bg-white rounded-lg border border-gray-100 shadow-sm p-6 md:p-10">
+          <div 
+            key={activeTab}
+            className="bg-white rounded-lg border border-gray-100 shadow-sm p-6 md:p-10 animate-fade-in"
+          >
             <h3 
               className="text-2xl font-bold text-[#1a1a2a] mb-6 pb-4 border-b border-gray-100"
               style={{ fontFamily: 'Barlow, sans-serif' }}
@@ -145,7 +156,7 @@ export default function ReferencePage() {
                 </table>
               </div>
             )}
-          </AnimatedSection>
+          </div>
         </div>
       </section>
     </>
