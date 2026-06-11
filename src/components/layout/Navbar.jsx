@@ -28,7 +28,7 @@ export default function Navbar() {
         
         {/* Logo Area */}
         <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-          <img src="/logo.png" alt="ANDE Industries" style={{ height: '64px', width: 'auto', objectFit: 'contain' }} />
+          <img src="/ande_logo.png" alt="ANDE Industries" style={{ height: '60px', width: '60px', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -136,7 +136,7 @@ export default function Navbar() {
             setMobileMenuOpen(false);
             setMobileActiveDropdown(null);
           }}>
-            <img src="/logo.png" alt="ANDE Industries" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/ande_logo.png" alt="ANDE Industries" style={{ height: '60px', width: '60px', objectFit: 'contain' }} />
           </Link>
           <button 
             className="text-white p-1 hover:bg-white/10 rounded transition-colors"
