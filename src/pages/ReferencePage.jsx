@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import PageHero from '../components/common/PageHero';
 import SectionHeader from '../components/common/SectionHeader';
-import AnimatedSection from '../components/common/AnimatedSection';
 import { referenceData } from '../data/referenceData';
 
 export default function ReferencePage() {
   const [activeTab, setActiveTab] = useState(0);
+
+  const activeData = referenceData[activeTab];
 
   return (
     <>
@@ -15,146 +16,144 @@ export default function ReferencePage() {
         breadcrumb="Home / Reference"
       />
 
-      <section className="pt-8 pb-16 md:pt-10 md:pb-24" style={{ background: '#f8f9fa' }}>
-        <div className="max-w-7xl mx-auto px-6">
+      <section style={{ background: '#f8f9fa', paddingTop: '2rem', paddingBottom: '4rem' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
           <SectionHeader
             label="TRACK RECORD"
             title="Global Project Reference List"
             centered
           />
 
-          {/* Mobile swipe helper */}
-          <div className="lg:hidden flex items-center justify-end text-xs text-[#1e5fa3] font-semibold mt-6 mb-2 gap-1 animate-pulse">
-            <span>Swipe to see more categories</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          {/* Mobile swipe helper - always visible on small screens */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '6px',
+            marginTop: '1.5rem',
+            marginBottom: '0.5rem',
+            color: '#1e5fa3',
+            fontWeight: '700',
+            fontSize: '13px',
+            fontFamily: 'Barlow, sans-serif',
+          }}
+            className="lg:hidden"
+          >
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+            </svg>
+            <span>Swipe tabs to see all categories</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </div>
 
           {/* Navigation Tabs */}
-          <div className="mb-8 flex justify-start lg:justify-center overflow-x-auto pb-4 gap-2 scrollbar-hide border-b border-gray-200">
+          <div style={{
+            display: 'flex',
+            overflowX: 'auto',
+            gap: '8px',
+            paddingBottom: '1rem',
+            borderBottom: '2px solid #e5e7eb',
+            marginBottom: '2rem',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+          }}>
             {referenceData.map((tab, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveTab(idx)}
-                className={`whitespace-nowrap px-6 py-3 font-bold text-[14px] uppercase tracking-wider transition-all duration-300 rounded-[2px] border ${
-                  activeTab === idx
-                    ? 'bg-[#1e5fa3] text-white border-[#1e5fa3] shadow-md'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-[#1e5fa3] hover:text-[#1e5fa3]'
-                }`}
-                style={{ fontFamily: 'Barlow, sans-serif' }}
+                style={{
+                  whiteSpace: 'nowrap',
+                  padding: '10px 20px',
+                  fontFamily: 'Barlow, sans-serif',
+                  fontWeight: '700',
+                  fontSize: '13px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  border: '2px solid',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  flexShrink: 0,
+                  ...(activeTab === idx
+                    ? {
+                        background: '#1e5fa3',
+                        color: '#fff',
+                        borderColor: '#1e5fa3',
+                        boxShadow: '0 4px 12px rgba(30,95,163,0.3)',
+                      }
+                    : {
+                        background: '#fff',
+                        color: '#4b5563',
+                        borderColor: '#d1d5db',
+                      }),
+                }}
               >
                 {tab.title.replace('Reference List of ', '').replace('References of ', '')}
               </button>
             ))}
           </div>
 
-          {/* Active Tab Content */}
-          <div 
+          {/* Active Tab Content - No animation, pure render */}
+          <div
             key={activeTab}
-            className="bg-white rounded-lg border border-gray-100 shadow-sm p-6 md:p-10 animate-fade-in"
+            style={{
+              background: '#fff',
+              borderRadius: '8px',
+              border: '1px solid #e5e7eb',
+              boxShadow: '0 1px 6px rgba(0,0,0,0.06)',
+              padding: '2rem',
+              opacity: 1,
+              visibility: 'visible',
+            }}
           >
-            <h3 
-              className="text-2xl font-bold text-[#1a1a2a] mb-6 pb-4 border-b border-gray-100"
-              style={{ fontFamily: 'Barlow, sans-serif' }}
-            >
-              {referenceData[activeTab].title}
+            <h3 style={{
+              fontSize: '22px',
+              fontWeight: '700',
+              color: '#1a1a2a',
+              marginBottom: '1.5rem',
+              paddingBottom: '1rem',
+              borderBottom: '2px solid #f3f4f6',
+              fontFamily: 'Barlow, sans-serif',
+            }}>
+              {activeData.title}
             </h3>
 
-            {/* Check if Table has sections (like PCI System) */}
-            {referenceData[activeTab].sections ? (
-              <div className="space-y-12">
-                {referenceData[activeTab].sections.map((section, sIdx) => (
-                  <div key={sIdx} className="space-y-4">
-                    <h4 
-                      className="text-lg font-bold text-[#1e5fa3] flex items-center gap-2 uppercase tracking-wide"
-                      style={{ fontFamily: 'Barlow, sans-serif' }}
-                    >
-                      <span className="w-1.5 h-6 bg-[#1e5fa3] inline-block rounded-full"></span>
+            {/* Sectioned table (PCI System) */}
+            {activeData.sections ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                {activeData.sections.map((section, sIdx) => (
+                  <div key={sIdx}>
+                    <h4 style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '16px',
+                      fontWeight: '700',
+                      color: '#1e5fa3',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '1rem',
+                      fontFamily: 'Barlow, sans-serif',
+                    }}>
+                      <span style={{
+                        display: 'inline-block',
+                        width: '4px',
+                        height: '22px',
+                        background: '#1e5fa3',
+                        borderRadius: '2px',
+                        flexShrink: 0,
+                      }} />
                       {section.name}
                     </h4>
-
-                    <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
-                      <table className="w-full text-left border-collapse text-sm">
-                        <thead>
-                          <tr className="bg-[#0d1b2a] text-white">
-                            {referenceData[activeTab].columns.map((col, colIdx) => (
-                              <th 
-                                key={colIdx} 
-                                className="px-6 py-4 font-bold tracking-wider uppercase text-xs border-r border-[#1a2d42] last:border-0"
-                                style={{ fontFamily: 'Barlow, sans-serif' }}
-                              >
-                                {col}
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-200 text-gray-700">
-                          {section.rows.map((row, rIdx) => {
-                            // Assign sequential SN for China Market if empty
-                            const displayRow = [...row];
-                            if (section.name === 'China & Other Abroad Markets' && !displayRow[0]) {
-                              displayRow[0] = (rIdx + 1).toString();
-                            }
-                            return (
-                              <tr 
-                                key={rIdx} 
-                                className="hover:bg-blue-50/40 transition-colors duration-150 odd:bg-gray-50/50"
-                              >
-                                {displayRow.map((val, cellIdx) => (
-                                  <td 
-                                    key={cellIdx} 
-                                    className="px-6 py-4 whitespace-pre-line border-r border-gray-100 last:border-0 leading-relaxed font-sans"
-                                  >
-                                    {val}
-                                  </td>
-                                ))}
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
+                    <ReferenceTable columns={activeData.columns} rows={section.rows} sectionName={section.name} />
                   </div>
                 ))}
               </div>
             ) : (
-              // Simple Table structure (Sinter, GCP, Pelletizing, Ironmaking)
-              <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
-                <table className="w-full text-left border-collapse text-sm">
-                  <thead>
-                    <tr className="bg-[#0d1b2a] text-white">
-                      {referenceData[activeTab].columns.map((col, colIdx) => (
-                        <th 
-                          key={colIdx} 
-                          className="px-6 py-4 font-bold tracking-wider uppercase text-xs border-r border-[#1a2d42] last:border-0"
-                          style={{ fontFamily: 'Barlow, sans-serif' }}
-                        >
-                          {col}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200 text-gray-700">
-                    {referenceData[activeTab].rows.map((row, rIdx) => (
-                      <tr 
-                        key={rIdx} 
-                        className="hover:bg-blue-50/40 transition-colors duration-150 odd:bg-gray-50/50"
-                      >
-                        {row.map((val, cellIdx) => (
-                          <td 
-                            key={cellIdx} 
-                            className="px-6 py-4 whitespace-pre-line border-r border-gray-100 last:border-0 leading-relaxed font-sans"
-                          >
-                            {/* Make '07' or other single digits commissioning years prettier if needed */}
-                            {colIdxToYearFormat(activeTab, cellIdx, val)}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              /* Simple table */
+              <ReferenceTable columns={activeData.columns} rows={activeData.rows} />
             )}
           </div>
         </div>
@@ -163,13 +162,66 @@ export default function ReferencePage() {
   );
 }
 
-// Small helper function to format short commissioning year values nicely if applicable
-function colIdxToYearFormat(activeTab, cellIdx, val) {
-  // Check if this is Table 5 (index 4) and Commissioning Time column (index 3)
-  if (activeTab === 4 && cellIdx === 3) {
-    if (val === '07') return '2007';
-    if (val === '04') return '2004';
-    if (val === '12') return '2012';
-  }
-  return val;
+function ReferenceTable({ columns, rows, sectionName }) {
+  return (
+    <div style={{ overflowX: 'auto', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left' }}>
+        <thead>
+          <tr style={{ background: '#0d1b2a', color: '#fff' }}>
+            {columns.map((col, colIdx) => (
+              <th
+                key={colIdx}
+                style={{
+                  padding: '14px 20px',
+                  fontFamily: 'Barlow, sans-serif',
+                  fontWeight: '700',
+                  fontSize: '11px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  borderRight: colIdx < columns.length - 1 ? '1px solid #1a2d42' : 'none',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {col}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, rIdx) => {
+            const displayRow = [...row];
+            if (sectionName === 'China & Other Abroad Markets' && !displayRow[0]) {
+              displayRow[0] = (rIdx + 1).toString();
+            }
+            return (
+              <tr
+                key={rIdx}
+                style={{
+                  background: rIdx % 2 === 0 ? '#f9fafb' : '#ffffff',
+                  borderBottom: '1px solid #f3f4f6',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#eff6ff'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = rIdx % 2 === 0 ? '#f9fafb' : '#ffffff'; }}
+              >
+                {displayRow.map((val, cellIdx) => (
+                  <td
+                    key={cellIdx}
+                    style={{
+                      padding: '12px 20px',
+                      borderRight: cellIdx < displayRow.length - 1 ? '1px solid #f3f4f6' : 'none',
+                      whiteSpace: 'pre-line',
+                      lineHeight: '1.6',
+                      color: '#374151',
+                    }}
+                  >
+                    {val}
+                  </td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 }
