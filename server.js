@@ -101,7 +101,7 @@ app.post('/api/enquiry', async (req, res) => {
 });
 
 // For any other routes, serve index.html (supports SPA routing in React Router)
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
