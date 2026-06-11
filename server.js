@@ -71,6 +71,14 @@ app.post('/api/enquiry', async (req, res) => {
   </table>
   `;
 
+  // Generate a detailed and descriptive subject
+  let emailSubject = '';
+  if (subject) {
+    emailSubject = `Contact Form: ${subject} (from ${name || 'N/A'}${company ? ` - ${company}` : ''})`;
+  } else {
+    emailSubject = `Quick Enquiry from ${name || 'N/A'} (${mobile || 'N/A'})`;
+  }
+
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -81,7 +89,8 @@ app.post('/api/enquiry', async (req, res) => {
       body: JSON.stringify({
         from: process.env.FROM_EMAIL || "ANDE Enquiry <onboarding@resend.dev>",
         to: process.env.TO_EMAIL || "karamit819@gmail.com",
-        subject: subject ? `Contact Form: ${subject}` : "New Website Enquiry",
+        reply_to: email, // Set the Reply-To header to the submitter's email
+        subject: emailSubject,
         html: htmlContent
       })
     });
