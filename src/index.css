@@ -265,3 +265,26 @@ img {
 .gallery-img:hover img {
   transform: scale(1.05);
 }
+
+/* ========================
+   PRODUCT CATEGORY PAGE
+======================== */
+.product-card-row {
+  flex-direction: row !important;
+}
+
+@media (max-width: 768px) {
+  .product-card-row {
+    flex-direction: column !important;
+  }
+
+  .product-img-wrap {
+    width: 100% !important;
+    min-width: unset !important;
+    height: 220px;
+  }
+
+  .product-card-content {
+    padding: 1.5rem !important;
+  }
+}

@@ -7,6 +7,7 @@ import TechnologyPage from './pages/technology/TechnologyPage';
 import TechnologyDetailPage from './pages/technology/TechnologyDetailPage';
 import ProductsPage from './pages/products/ProductsPage';
 import ProductDetailPage from './pages/products/ProductDetailPage';
+import CategoryProductPage from './pages/products/CategoryProductPage';
 import PerformancePage from './pages/performance/PerformancePage';
 import PerformanceDetailPage from './pages/performance/PerformanceDetailPage';
 import ServicesPage from './pages/services/ServicesPage';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/technology/:slug" element={<TechnologyDetailPage />} />
           
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/category/:category" element={<CategoryProductPage />} />
           <Route path="/products/:slug" element={<ProductDetailPage />} />
           
           <Route path="/performance" element={<PerformancePage />} />
