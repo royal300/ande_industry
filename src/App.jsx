@@ -18,6 +18,7 @@ import HonorPage from './pages/company/HonorPage';
 import AppearancePage from './pages/company/AppearancePage';
 import ManufacturingPage from './pages/company/ManufacturingPage';
 import ContactPage from './pages/company/ContactPage';
+import ReferencePage from './pages/ReferencePage';
 import NewsPage from './pages/news/NewsPage';
 import NewsDetailPage from './pages/news/NewsDetailPage';
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/company/appearance" element={<AppearancePage />} />
           <Route path="/company/manufacturing" element={<ManufacturingPage />} />
           <Route path="/company/contact" element={<ContactPage />} />
+          <Route path="/reference" element={<ReferencePage />} />
           
           <Route path="/news" element={<NewsPage />} />
           <Route path="/news/:id" element={<NewsDetailPage />} />

@@ -95,6 +95,11 @@ export const navItems = [
     dropdown: null,
   },
   {
+    label: 'Reference',
+    href: '/reference',
+    dropdown: null,
+  },
+  {
     label: 'Contact Us',
     href: '/company/contact',
     dropdown: null,
