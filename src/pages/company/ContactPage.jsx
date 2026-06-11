@@ -46,21 +46,19 @@ export default function ContactPage() {
     setStatus('loading');
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/karamit819@gmail.com", {
+      const response = await fetch("/api/enquiry", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          Name: formData.name,
-          Company: formData.company,
-          Email: formData.email,
-          Phone: formData.phone,
-          Country: formData.country,
-          Subject: formData.subject,
-          Message: formData.message,
-          _subject: `New Contact Inquiry: ${formData.subject} - ANDE Industries`,
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          mobile: formData.phone,
+          country: formData.country,
+          subject: formData.subject,
+          message: formData.message
         })
       });
 

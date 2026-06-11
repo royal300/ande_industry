@@ -57,9 +57,8 @@ ssh $VPS_USER@$VPS_IP << 'EOF'
   pm2 stop ande-web 2>/dev/null || true
   pm2 delete ande-web 2>/dev/null || true
 
-  # Serve the 'dist' directory. 
-  # --spa flag ensures React Router handles all page reloads correctly.
-  pm2 serve dist 8095 --name "ande-web" --spa
+  # Start the Node/Express server using PM2
+  pm2 start server.js --name "ande-web"
 
   # Save PM2 process list so it automatically restarts if the VPS reboots
   pm2 save

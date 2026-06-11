@@ -81,18 +81,16 @@ export default function EnquiryFloat() {
     setSubmitStatus('loading');
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/karamit819@gmail.com", {
+      const response = await fetch("/api/enquiry", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          Name: formData.name,
-          Mobile: formData.mobile,
-          Email: formData.email,
-          Message: formData.message,
-          _subject: "New Website Enquiry - ANDE Industries",
+          name: formData.name,
+          mobile: formData.mobile,
+          email: formData.email,
+          message: formData.message
         })
       });
 
@@ -210,11 +208,6 @@ export default function EnquiryFloat() {
                   </div>
                   <h4 className="text-lg font-bold text-gray-900" style={{ fontFamily: 'Barlow, sans-serif' }}>Enquiry Submitted!</h4>
                   <p className="text-sm text-gray-600 mt-2">Thank you for reaching out. We have received your query and will reply shortly.</p>
-                  
-                  {/* Note about activation if it's their first time */}
-                  <div className="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-[11px] text-blue-800 text-left max-w-xs leading-relaxed">
-                    <strong>Note:</strong> If this is your first submission, FormSubmit will send a verification email to <strong>karamit819@gmail.com</strong>. Please check your inbox (and spam folder) and click <strong>"Activate Form"</strong> to begin receiving submissions.
-                  </div>
 
                   <button
                     onClick={() => { setIsOpen(false); setSubmitStatus('idle'); }}
