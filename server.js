@@ -76,7 +76,7 @@ app.post('/api/enquiry', async (req, res) => {
   if (subject) {
     emailSubject = `Contact Form: ${subject} (from ${name || 'N/A'}${company ? ` - ${company}` : ''})`;
   } else {
-    emailSubject = `Quick Enquiry from ${name || 'N/A'} (${mobile || 'N/A'})`;
+    emailSubject = `Quick Enquiry from ${name || 'N/A'}`;
   }
 
   try {
@@ -88,7 +88,7 @@ app.post('/api/enquiry', async (req, res) => {
       },
       body: JSON.stringify({
         from: process.env.FROM_EMAIL || "ANDE Enquiry <onboarding@resend.dev>",
-        to: process.env.TO_EMAIL || "karamit819@gmail.com",
+        to: process.env.TO_EMAIL || "info@andeiptl.com",
         reply_to: email, // Set the Reply-To header to the submitter's email
         subject: emailSubject,
         html: htmlContent

@@ -94,4 +94,9 @@ export const navItems = [
     href: '/company',
     dropdown: null,
   },
+  {
+    label: 'Contact Us',
+    href: '/company/contact',
+    dropdown: null,
+  },
 ];

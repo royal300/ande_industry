@@ -128,7 +128,7 @@ export default function EnquiryFloat() {
           position: absolute;
           inset: -4px;
           border-radius: 50%;
-          border: 2px solid #1e5fa3;
+          border: 2px solid #f59e0b;
           animation: pulse-ring-anim 2s infinite;
           pointer-events: none;
         }
@@ -140,11 +140,11 @@ export default function EnquiryFloat() {
       `}</style>
 
       {/* Floating Button Container */}
-      <div className="fixed bottom-24 right-8 z-50 flex items-center select-none font-sans">
+      <div className="fixed bottom-8 right-8 z-50 flex items-center select-none font-sans">
         
         {/* Tooltip Label */}
         <div 
-          className={`mr-3 py-2 px-4 bg-white text-[#1e5fa3] border border-[#e8e8e8] font-bold text-sm rounded-lg shadow-lg flex items-center transition-all duration-300 transform origin-right ${
+          className={`mr-3 py-2 px-4 bg-[#0d1b2a] text-[#f59e0b] border border-[#0d1b2a] font-bold text-sm rounded-lg shadow-lg flex items-center transition-all duration-300 transform origin-right ${
             showTooltip && !isOpen
               ? 'opacity-100 translate-x-0 scale-100' 
               : 'opacity-0 translate-x-4 scale-95 pointer-events-none'
@@ -152,8 +152,8 @@ export default function EnquiryFloat() {
           style={{ fontFamily: 'Barlow, sans-serif' }}
         >
           <span className="flex h-2 w-2 relative mr-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1e5fa3]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#f59e0b]"></span>
           </span>
           Enquiry Us
         </div>
@@ -161,10 +161,12 @@ export default function EnquiryFloat() {
         {/* Floating Round Action Button */}
         <button
           onClick={() => setIsOpen(true)}
-          className={`w-[56px] h-[56px] rounded-full flex items-center justify-center text-white shadow-2xl relative transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none ${
+          className={`w-[56px] h-[56px] rounded-full flex items-center justify-center text-[#0d1b2a] shadow-2xl relative transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none ${
             isShaking ? 'enquiry-shake' : ''
           } ${!isOpen ? 'pulse-glowing' : ''}`}
-          style={{ background: '#1e5fa3' }}
+          style={{ background: '#f59e0b' }}
+          onMouseEnter={(e) => e.currentTarget.style.background = '#d97706'}
+          onMouseLeave={(e) => e.currentTarget.style.background = '#f59e0b'}
           aria-label="Open Enquiry Form"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

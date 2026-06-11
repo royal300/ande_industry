@@ -24,7 +24,10 @@ export default function BackToTop() {
   };
 
   return (
-    <div className={`fixed bottom-8 right-8 z-50 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+    <div 
+      className={`fixed z-50 transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      style={{ right: '38px', bottom: '104px' }}
+    >
       <button
         onClick={scrollToTop}
         className="w-[44px] h-[44px] flex items-center justify-center rounded-full shadow-lg transition-colors duration-200 focus:outline-none"
