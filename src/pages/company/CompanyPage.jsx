@@ -38,7 +38,7 @@ export default function CompanyPage() {
           <SectionHeader label="GLOBAL HERITAGE" title="Our Global Heritage" />
           <div className="space-y-5 text-[#555] text-[16px] leading-[1.85] mt-8">
             <p>
-              Our foundation is built upon the formidable legacy of Ande China, a premier manufacturing powerhouse with a comprehensive global footprint. For years, our mother company has set industry benchmarks in manufacturing scale, technological innovation, and supply chain efficiency, delivering high-quality products to markets across the world. Ande Industries Pvt. Ltd. was conceived to harness this global expertise and tailor it for strategic regional expansion.
+              Our foundation is built upon the formidable legacy of Ande China, a premier manufacturing powerhouse with a comprehensive global footprint. For years, our parent company has set industry benchmarks in manufacturing scale, technological innovation, and supply chain efficiency, delivering high-quality products to markets across the world. Ande Industries Pvt. Ltd. was conceived to harness this global expertise and tailor it for strategic regional expansion.
             </p>
           </div>
         </div>

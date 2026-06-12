@@ -37,7 +37,7 @@ export default function ContactPage() {
             <div className="bg-gray-50 border border-gray-100 rounded-lg p-8 shadow-sm">
               <h3 className="text-xl font-bold text-[#1e5fa3] mb-5 flex items-center gap-2" style={{ fontFamily: 'Barlow, sans-serif' }}>
                 <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-                Mother Company
+                Parent Company
               </h3>
               <div className="text-gray-600 text-sm space-y-4 leading-relaxed font-sans">
                 <div>

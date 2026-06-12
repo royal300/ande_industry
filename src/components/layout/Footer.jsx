@@ -45,9 +45,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2 — Mother Company */}
+          {/* Column 2 — Parent Company */}
           <div>
-            <FooterHeading>Mother Company</FooterHeading>
+            <FooterHeading>Parent Company</FooterHeading>
             <div className="space-y-3" style={{ color: '#aaaaaa', fontSize: 13, lineHeight: 1.6 }}>
               <div>
                 <p className="font-semibold text-white">Ande Metallurgical Machinery Co. Ltd., Head Office</p>
