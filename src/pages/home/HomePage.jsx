@@ -129,69 +129,21 @@ function HeroSlider() {
   );
 }
 
-/* ──────────────── Stats Bar ──────────────── */
-const statsData = [
-  { value: 150, label: '150+ Employees', suffix: '+' },
-  { value: 90, label: '90+ Systems Commissioned', suffix: '+' },
-  { value: 110, label: '110+ Projects Completed', suffix: '+' },
-  { value: 30, label: '30+ Years Experience', suffix: '+' },
-];
-
-function useCounter(endValue, duration = 1500) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !started) {
-          setStarted(true);
-          let start = 0;
-          const increment = endValue / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= endValue) {
-              setCount(endValue);
-              clearInterval(timer);
-            } else {
-              setCount(Math.ceil(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [endValue, duration, started]);
-
-  return { count, ref };
-}
-
-function StatItem({ item }) {
-  const { count, ref } = useCounter(item.value);
-  return (
-    <div ref={ref} className="text-center px-4">
-      <div className="font-bold text-white mb-1" style={{ fontFamily: 'Barlow, sans-serif', fontSize: '36px' }}>
-        {count}{item.suffix}
-      </div>
-      <div className="text-white" style={{ fontSize: '14px', opacity: 0.85 }}>
-        {item.label}
-      </div>
-    </div>
-  );
-}
-
+/* ──────────────── Quote Banner ──────────────── */
 function StatsBar() {
   return (
-    <section className="w-full py-12" style={{ background: '#1e5fa3' }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-white divide-opacity-20">
-          {statsData.map((stat, i) => (
-            <StatItem key={i} item={stat} />
-          ))}
-        </div>
+    <section className="w-full py-10 bg-[#1e5fa3] relative overflow-hidden select-none">
+      {/* Background large watermark quotation marks */}
+      <div className="absolute -left-4 -top-8 text-[180px] font-serif text-white opacity-[0.08] leading-none pointer-events-none select-none">
+        “
+      </div>
+      <div className="absolute -right-4 -bottom-16 text-[180px] font-serif text-white opacity-[0.08] leading-none pointer-events-none select-none">
+        ”
+      </div>
+      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
+        <blockquote className="text-white text-base md:text-[22px] font-normal italic leading-relaxed tracking-wide" style={{ fontFamily: 'Barlow, sans-serif' }}>
+          “ Deliver high quality products to customers, provide innovative metallurgical equipment solutions, and lead the market trend ”
+        </blockquote>
       </div>
     </section>
   );
@@ -244,19 +196,15 @@ function HomeTechnology() {
 /* ──────────────── Performance Section ──────────────── */
 const trackRecordData = {
   metallurgical: [
-    { name: 'Hoa Phat Steel - 3500m³ BF PCI System' },
-    { name: 'TATA Steel - 600 t/d Active Lime Plant' },
-    { name: 'POSCO - 400 m² Sinter Plant Upgrade' },
+    { name: '600/800 TPD Active Lime Rotary Kiln Line Project of Zouping Qifa Material Ltd.' },
+    { name: '600TPD Active Lime Rotary Kiln Line Project of Jigang Refractory Ltd.' },
   ],
   power: [
-    { name: 'NTPC Barh - 5x660MW Coal Milling System' },
-    { name: 'Datang Power - Coal Handling Plant' },
-    { name: 'Formosa Power - Pneumatic Conveying Upgrade' },
+    { name: 'ANDE is located in Chengdong Industrial Park, Mingshui Economic Development' },
+    { name: 'Coal injection system for 31260 m3 blast furnace of Hebei Jingye iron and Steel Co., Ltd' },
   ],
   mining: [
-    { name: 'Codelco - Copper Concentrator' },
-    { name: 'Fortescue - Iron Ore Beneficiation' },
-    { name: 'Kinross - Lead Smelting Project' },
+    { name: 'Mengzi Mining and Metallurgical Co., Ltd. 60 thousand t/a lead smelting project pulverized coal preparation system' },
   ]
 };
 
@@ -327,23 +275,18 @@ function PerformanceSection() {
             
             {/* Right Project List */}
             <div className="flex-1 flex flex-col justify-center">
-              <div className="mb-6">
+              <div className="space-y-2">
                 {projects.map((p, i) => (
-                  <Link
+                  <div
                     key={i}
-                    to="/performance"
-                    className="block py-3 transition-colors duration-200 border-b border-gray-100"
-                    style={{ fontSize: '15px', color: '#1a1a2a' }}
-                    onMouseEnter={(e) => e.currentTarget.style.color = '#1e5fa3'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = '#1a1a2a'}
+                    className="py-4 border-b border-gray-100 flex items-start text-left text-gray-800 font-semibold"
+                    style={{ fontSize: '15px', lineHeight: '1.6' }}
                   >
-                    {p.name} <span className="ml-2">→</span>
-                  </Link>
+                    <span className="text-[#1e5fa3] mr-3 mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-[#1e5fa3]"></span>
+                    <span>{p.name}</span>
+                  </div>
                 ))}
               </div>
-              <Link to="/performance" className="text-sm font-semibold transition-colors hover:text-blue-800" style={{ color: '#1e5fa3' }}>
-                SEE ALL CASES →
-              </Link>
             </div>
           </div>
         </AnimatedSection>
@@ -424,8 +367,11 @@ function InnovationSection() {
           <h2 className="font-bold text-[#1a1a2a] text-[32px] mb-6" style={{ fontFamily: 'Barlow, sans-serif' }}>
             Continuous Innovation
           </h2>
-          <p className="text-[#666666] text-[16px] mb-8" style={{ lineHeight: 1.7 }}>
-            ANDE holds multiple patents and software copyrights in grinding, coal injection, and control systems. Innovation is not just a process — it's our culture.
+          <p className="text-[#666666] text-[15px] mb-4" style={{ lineHeight: 1.7 }}>
+            Whenever customer faces challenge of quality, productivity, operation cost or emission, we usually take it as potential opportunity for improvement and development. Through continuous improvement and innovation, ANDE can make contribution to customer’s sustainable development, and help itself obtain leading technology and knowhow.
+          </p>
+          <p className="text-[#666666] text-[15px] mb-8 font-semibold" style={{ lineHeight: 1.7 }}>
+            In the company, innovation is an orientation, and is immersed in our culture.
           </p>
           
           <div className="mb-10 space-y-4">
@@ -457,12 +403,6 @@ function InnovationSection() {
 }
 
 /* ──────────────── News Section ──────────────── */
-const homeNewsData = [
-  { cat: 'COMPANY', title: 'ANDE Expands Manufacturing Facility in Jinan', date: 'Oct 12, 2025', excerpt: 'The new 10,000 m² workshop will increase our heavy equipment production capacity by 30%.', image: '/images/news_card_1_1780751530210.webp' },
-  { cat: 'PROJECT STATUS', title: 'Successful Commissioning of 5000t/d Lime Kiln', date: 'Sep 28, 2025', excerpt: 'The turnkey active lime plant for TATA Steel achieved full capacity during performance tests.', image: '/images/news_card_2_1780751543543.webp' },
-  { cat: 'INDUSTRY NEWS', title: 'New Regulations Drive Demand for Ultra-Low Emission Systems', date: 'Aug 15, 2025', excerpt: 'Recent environmental standards are accelerating the adoption of our advanced bag filter technologies.', image: '/images/news_card_3_1780751556923.webp' },
-];
-
 function NewsSection() {
   return (
     <section className="py-20" style={{ background: '#ffffff' }}>
@@ -470,38 +410,92 @@ function NewsSection() {
         <SectionHeader label="LATEST FROM ANDE" title="News & Updates" centered />
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-          {homeNewsData.map((news, i) => (
-            <Link 
-              key={i} 
-              to="/news" 
-              className="flex flex-col bg-white rounded-sm group overflow-hidden transition-all duration-300 ease-in-out"
-              style={{ border: '1px solid #e8e8e8', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
-              }}
-            >
-              {/* Image Area */}
-              <div className="h-[220px] bg-cover bg-center" style={{ backgroundImage: `url(${news.image})` }} />
-              
-              <div className="p-6 flex flex-col flex-1">
-                <span className="text-[11px] font-bold uppercase tracking-[2px] mb-2" style={{ color: '#1e5fa3' }}>{news.cat}</span>
-                <h3 className="font-semibold text-[17px] mb-2 transition-colors duration-200" style={{ color: '#1a1a2a', fontFamily: 'Barlow, sans-serif' }}>
-                  {news.title}
-                </h3>
-                <span className="text-[13px] mb-3 block" style={{ color: '#999999' }}>{news.date}</span>
-                <p className="text-[14px] line-clamp-3 mb-6" style={{ color: '#666666', lineHeight: 1.6 }}>{news.excerpt}</p>
-                
-                <div className="mt-auto text-[13px] font-semibold flex items-center group-hover:translate-x-1 transition-transform" style={{ color: '#1e5fa3' }}>
-                  Read More <span className="ml-1">→</span>
-                </div>
-              </div>
-            </Link>
-          ))}
+          {/* Column 1: Company */}
+          <div 
+            className="bg-[#f8fafc] p-8 rounded-sm flex flex-col h-full border border-gray-100 hover:shadow-md transition-shadow duration-300"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+              <h3 className="font-bold text-xs uppercase tracking-[2px] text-gray-400">Company</h3>
+            </div>
+            <p className="text-gray-700 text-sm leading-relaxed mb-6 font-medium">
+              As an innovative specialist involved in research & design, engineering, manufacturing and technical service.
+            </p>
+            <div className="mt-auto pt-4">
+              <a 
+                href="http://www.andeindustries.com/pageinfo-13.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-xs font-bold text-[#1e5fa3] hover:text-[#154f8a] uppercase tracking-wider group"
+              >
+                Read More <span className="ml-1.5 transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Project Status */}
+          <div 
+            className="bg-[#f8fafc] p-8 rounded-sm flex flex-col h-full border border-gray-100 hover:shadow-md transition-shadow duration-300"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-600"></span>
+              <h3 className="font-bold text-xs uppercase tracking-[2px] text-gray-400">Project Status</h3>
+            </div>
+            <ul className="space-y-6 flex-1">
+              <li className="border-b border-gray-200/60 pb-4 last:border-0 last:pb-0">
+                <a 
+                  href="http://www.andeindustries.com/info-18.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-gray-800 text-[13.5px] leading-relaxed font-semibold hover:text-[#1e5fa3] transition-colors"
+                >
+                  Summary of the five major scientific and technological achievements of global energy saving and emission reduction in 2014
+                </a>
+              </li>
+              <li className="last:border-0 last:pb-0">
+                <a 
+                  href="http://www.andeindustries.com/info-17.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-gray-800 text-[13.5px] leading-relaxed font-semibold hover:text-[#1e5fa3] transition-colors"
+                >
+                  Maanshan Iron & Steel (Hefei) Environmental Relocation Project 3 Sintering Project started
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Industry */}
+          <div 
+            className="bg-[#f8fafc] p-8 rounded-sm flex flex-col h-full border border-gray-100 hover:shadow-md transition-shadow duration-300"
+          >
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+              <h3 className="font-bold text-xs uppercase tracking-[2px] text-gray-400">Industry</h3>
+            </div>
+            <ul className="space-y-6 flex-1">
+              <li className="border-b border-gray-200/60 pb-4 last:border-0 last:pb-0">
+                <a 
+                  href="http://www.andeindustries.com/info-17.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-gray-800 text-[13.5px] leading-relaxed font-semibold hover:text-[#1e5fa3] transition-colors"
+                >
+                  Maanshan Iron & Steel (Hefei) Environmental Relocation Project 3 Sintering Project started
+                </a>
+              </li>
+              <li className="last:border-0 last:pb-0">
+                <a 
+                  href="http://www.andeindustries.com/info-25.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-gray-800 text-[13.5px] leading-relaxed font-semibold hover:text-[#1e5fa3] transition-colors"
+                >
+                  Shigang Company’s relocation and upgrading project signed a cooperation agreement
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
