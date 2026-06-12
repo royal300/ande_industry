@@ -151,14 +151,14 @@ function StatsBar() {
 
 /* ──────────────── Technology Section ──────────────── */
 const homeTechData = [
-  { title: 'PCI for Furnace & Kiln', desc: 'Advanced Pulverized Coal Injection systems engineered for blast furnaces.', image: '/images/tech_pneumatic_1780751853220.webp' },
-  { title: 'Grinding', desc: 'High-performance grinding solutions tailored for iron ore and coal.', image: '/images/tech_grinding_1780751799211.webp' },
-  { title: 'Crushing & Sizing', desc: 'Robust crushing and screening equipment for primary and secondary reduction.', image: '/images/tech_crushing_1780751814463.webp' },
-  { title: 'Drying & Preheating', desc: 'Custom-designed rotary drum dryers and preheaters for moisture removal.', image: '/images/tech_drying_1780751825785.webp' },
-  { title: 'Feeding & Metering', desc: 'Precision weighing, feeding, and metering systems ensuring accurate dosing.', image: '/images/tech_feeding_1780751840036.webp' },
-  { title: 'Pneumatic Conveying', desc: 'Dense-phase and dilute-phase pneumatic conveying systems.', image: '/images/tech_pneumatic_1780751853220.webp' },
-  { title: 'Pelletizing', desc: 'Iron ore pelletizing technology from concentrate preparation to firing.', image: '/images/tech_drying_1780751825785.webp' },
-  { title: 'Sintering', desc: 'Sinter plant engineering covering raw material blending and ignition.', image: '/images/tech_lime_1780751871313.webp' },
+  { title: 'PCI for Furnace & Kiln', desc: 'Advanced Pulverized Coal Injection systems engineered for blast furnaces.', image: '/Technology/PulvarizedCoalInjection.jpg' },
+  { title: 'Grinding', desc: 'High-performance grinding solutions tailored for iron ore and coal.', image: '/Technology/Grinding.jpg' },
+  { title: 'Crushing & Sizing', desc: 'Robust crushing and screening equipment for primary and secondary reduction.', image: '/Technology/crushingsizing.jpg' },
+  { title: 'Drying & Preheating', desc: 'Custom-designed rotary drum dryers and preheaters for moisture removal.', image: '/Technology/dying.jpg' },
+  { title: 'Feeding & Metering', desc: 'Precision weighing, feeding, and metering systems ensuring accurate dosing.', image: '/Technology/feedingmetering.jpg' },
+  { title: 'Pneumatic Conveying', desc: 'Dense-phase and dilute-phase pneumatic conveying systems.', image: '/Technology/pneumatic.jpg' },
+  { title: 'Pelletizing', desc: 'Iron ore pelletizing technology from concentrate preparation to firing.', image: '/Technology/pelletizing.jpg' },
+  { title: 'Sintering', desc: 'Sinter plant engineering covering raw material blending and ignition.', image: '/Technology/sinetering.jpg' },
 ];
 
 function HomeTechnology() {
@@ -178,10 +178,7 @@ function HomeTechnology() {
               title={tech.title}
               description={tech.desc}
               image={tech.image}
-              links={[
-                { label: 'Technical Features', href: `/technology` },
-                { label: 'Application', href: `/technology` }
-              ]}
+              href="/technology"
             />
           ))}
         </AnimatedSection>
