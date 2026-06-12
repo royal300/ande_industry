@@ -21,13 +21,6 @@ export const performanceData = [
     description: 'Qingdao Iron and Steel Co., Ltd. Urban Steel Plant Environmental Relocation Project — 2×240m² sintering production line. ANDE supplied and commissioned the complete crushing, sizing and sintering equipment for this major urban relocation and environmental upgrade project.',
     image: '/Performance/Metallugurical/quindaoiron.webp',
   },
-  {
-    id: 4,
-    industry: 'Metallurgical',
-    title: 'Sichuan Desheng Iron and Steel Co., Ltd.',
-    description: "Sichuan Desheng Iron and Steel Co., Ltd. purchased a CQD-80 ring gear double-roll coke cutting machine. This coke cutter from ANDE's proven CQD series was installed to improve coke sizing efficiency and reduce fine coke ratio in the ironmaking process.",
-    image: '/Performance/Metallugurical/sichaun.webp',
-  },
   
   // Power Generation
   {
@@ -51,14 +44,14 @@ export const performanceData = [
     industry: 'Beneficiation',
     title: 'Mengzi Mining and Metallurgical Co., Ltd. — 60,000 t/a Lead Smelting Project Pulverized Coal Preparation System',
     description: 'Mengzi Mining and Metallurgical Co., Ltd. — 60,000 t/a Lead Smelting Project Pulverized Coal Preparation System. ANDE designed and supplied the complete system components for this high-capacity lead smelting operation.',
-    image: '/Performance/Beneficiation industry/pulverized.webp',
+    image: '/Performance/Beneficiation/pulverized.webp',
   },
   {
     id: 8,
     industry: 'Beneficiation',
     title: 'Linyi Huashang Mining Co., Ltd. — 1.2 Million t/a Pelletizing Project Rotary Kiln Pulverized Coal Preparation System',
     description: 'Linyi Huashang Mining Co., Ltd. — 1.2 Million t/a Pelletizing Project Rotary Kiln Pulverized Coal Preparation System. Complete turnkey pulverized coal preparation system supplied and commissioned by ANDE.',
-    image: '/Performance/Beneficiation industry/linyihuasha.webp',
+    image: '/Performance/Beneficiation/linyihuasha.webp',
   },
   
   // Chemical

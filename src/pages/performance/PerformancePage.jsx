@@ -66,20 +66,9 @@ export default function PerformancePage() {
                   <h3 className="font-semibold text-[#1a1a2a] text-[16px] mb-2 group-hover:text-[#1e5fa3] transition-colors" style={{ fontFamily: 'Barlow, sans-serif' }}>
                     {project.title}
                   </h3>
-                  <p className="text-[#666666] text-[14px] line-clamp-2 mb-5 leading-[1.6]">
+                  <p className="text-[#666666] text-[14px] leading-[1.6] flex-1">
                     {project.description}
                   </p>
-                  
-                  <div className="mt-auto space-y-2">
-                    <div className="flex items-center gap-2 text-[#888888] text-[13px]">
-                      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                      {project.location}
-                    </div>
-                    <div className="flex items-center gap-2 text-[#888888] text-[13px]">
-                      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v8l9-11h-7z"/></svg>
-                      {project.capacity}
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}

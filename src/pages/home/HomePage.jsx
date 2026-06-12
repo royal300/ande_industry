@@ -213,7 +213,7 @@ function PerformanceSection() {
   const tabImages = {
     metallurgical: '/Performance/Metallugurical/PlaceZouping.webp',
     power: '/Performance/Powergenration/chengdon.webp',
-    mining: '/Performance/Beneficiation industry/pulverized.webp'
+    mining: '/Performance/Beneficiation/pulverized.webp'
   };
 
   const handleTabChange = (tab) => {
@@ -274,14 +274,15 @@ function PerformanceSection() {
             <div className="flex-1 flex flex-col justify-center">
               <div className="space-y-2">
                 {projects.map((p, i) => (
-                  <div
+                  <Link
                     key={i}
-                    className="py-4 border-b border-gray-100 flex items-start text-left text-gray-800 font-semibold"
+                    to="/performance"
+                    className="py-4 border-b border-gray-100 flex items-start text-left text-gray-800 font-semibold hover:text-[#1e5fa3] transition-colors w-full"
                     style={{ fontSize: '15px', lineHeight: '1.6' }}
                   >
                     <span className="text-[#1e5fa3] mr-3 mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-[#1e5fa3]"></span>
                     <span>{p.name}</span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

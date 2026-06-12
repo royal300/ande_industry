@@ -1,5 +1,4 @@
 import PageHero from '../../components/common/PageHero';
-import AnimatedSection from '../../components/common/AnimatedSection';
 import { technologyData } from '../../data/technologyData';
 
 export default function TechnologyPage() {
@@ -42,7 +41,7 @@ export default function TechnologyPage() {
           </div>
 
           {/* Technology list */}
-          <AnimatedSection style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {technologyData.map((tech, idx) => (
               <div
                 key={tech.slug}
@@ -145,7 +144,7 @@ export default function TechnologyPage() {
                 </div>
               </div>
             ))}
-          </AnimatedSection>
+          </div>
 
         </div>
       </section>
