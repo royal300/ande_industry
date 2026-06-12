@@ -7,24 +7,7 @@ export const navItems = [
   {
     label: 'Technology',
     href: '/technology',
-    dropdown: {
-      heading: 'Technology Solutions',
-      seeAllHref: '/technology',
-      links: [
-        { label: 'PCI for Furnace & Kiln', href: '/technology/pci-furnace-kiln' },
-        { label: 'Grinding', href: '/technology/grinding' },
-        { label: 'Crushing & Sizing', href: '/technology/crushing-sizing' },
-        { label: 'Drying & Preheating', href: '/technology/drying-preheating' },
-        { label: 'Feeding & Metering', href: '/technology/feeding-metering' },
-        { label: 'Pneumatic Conveying', href: '/technology/pneumatic-conveying' },
-        { label: 'Active Lime', href: '/technology/active-lime' },
-        { label: 'Pelletizing', href: '/technology/pelletizing' },
-        { label: 'Sintering', href: '/technology/sintering' },
-        { label: 'BF Ironmaking', href: '/technology/bf-ironmaking' },
-        { label: 'Flue Gas Purification', href: '/technology/flue-gas-purification' },
-        { label: 'Beneficiation', href: '/technology/beneficiation' },
-      ],
-    },
+    dropdown: null,
   },
   {
     label: 'Products',

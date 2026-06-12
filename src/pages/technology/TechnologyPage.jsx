@@ -1,94 +1,152 @@
-import { useState } from 'react';
 import PageHero from '../../components/common/PageHero';
-import TechCard from '../../components/common/TechCard';
 import AnimatedSection from '../../components/common/AnimatedSection';
 import { technologyData } from '../../data/technologyData';
 
-const techCategories = [
-  'All', 'PCI Systems', 'Grinding', 'Crushing', 'Drying', 
-  'Feeding', 'Conveying', 'Thermal', 'Sintering'
-];
-
 export default function TechnologyPage() {
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  // Basic filter mapping (you might need to adjust mapping logic based on your data structure)
-  const filteredTech = activeCategory === 'All' 
-    ? technologyData 
-    : technologyData.filter(tech => 
-        tech.title.toLowerCase().includes(activeCategory.toLowerCase()) ||
-        tech.category.toLowerCase().includes(activeCategory.toLowerCase())
-      );
-
   return (
     <>
       <PageHero
-        title="Technology"
-        subtitle="High-performance solutions for metallurgical processes worldwide"
+        title="Technology Solutions"
+        subtitle="High-performance proprietary equipment and engineering systems for the global market"
         breadcrumb="Home / Technology"
       />
 
-      {/* Intro Paragraph Section */}
-      <section className="py-16 bg-white text-center">
-        <div className="max-w-3xl mx-auto px-6">
-          <p className="text-[16px] text-[#555] leading-relaxed">
-            ANDE Industries offers a comprehensive portfolio of proprietary technologies designed to optimize metallurgical, mining, and chemical operations. From advanced pulverized coal injection systems that reduce fuel costs, to high-efficiency grinding and emission control solutions, our engineering expertise ensures that every process step operates at peak performance. Explore our core technical capabilities below.
-          </p>
-        </div>
-      </section>
-
-      {/* Main Technology Grid */}
-      <section className="py-20" style={{ background: '#f5f7fa' }}>
-        <div className="max-w-7xl mx-auto px-6">
+      <section style={{ background: '#f8f9fa', paddingTop: '3rem', paddingBottom: '5rem' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
           
-          {/* Filter Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
-            {techCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className="px-5 py-2 text-[14px] font-semibold rounded-sm transition-all duration-200"
-                style={{
-                  background: activeCategory === cat ? '#1e5fa3' : 'transparent',
-                  color: activeCategory === cat ? '#ffffff' : '#666666',
-                  border: `1px solid ${activeCategory === cat ? '#1e5fa3' : '#cccccc'}`,
-                  fontFamily: 'Barlow, sans-serif'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeCategory !== cat) {
-                    e.currentTarget.style.borderColor = '#1e5fa3';
-                    e.currentTarget.style.color = '#1e5fa3';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeCategory !== cat) {
-                    e.currentTarget.style.borderColor = '#cccccc';
-                    e.currentTarget.style.color = '#666666';
-                  }
-                }}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* Section Heading */}
+          <div style={{ marginBottom: '2.5rem' }}>
+            <p style={{
+              display: 'inline-block',
+              fontSize: '11px',
+              fontWeight: '700',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              color: '#1e5fa3',
+              fontFamily: 'Barlow, sans-serif',
+              marginBottom: '6px',
+            }}>
+              Core Capabilities
+            </p>
+            <h2 style={{
+              fontSize: '28px',
+              fontWeight: '700',
+              color: '#1a1a2a',
+              fontFamily: 'Barlow, sans-serif',
+              lineHeight: 1.25,
+              borderLeft: '4px solid #1e5fa3',
+              paddingLeft: '14px',
+            }}>
+              Our Technology Portfolio
+            </h2>
           </div>
 
-          {/* Cards Grid */}
-          <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredTech.map((tech) => (
-              <TechCard
+          {/* Technology list */}
+          <AnimatedSection style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {technologyData.map((tech, idx) => (
+              <div
                 key={tech.slug}
-                title={tech.title}
-                description={tech.description}
-                href={`/technology/${tech.slug}`}
-              />
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  background: '#ffffff',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '6px',
+                  overflow: 'hidden',
+                  boxShadow: '0 1px 6px rgba(0,0,0,0.06)',
+                  transition: 'box-shadow 0.2s ease',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.1)'; }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.06)'; }}
+                className="product-card-row"
+              >
+                {/* Image */}
+                <div
+                  style={{
+                    width: '280px',
+                    minWidth: '280px',
+                    height: '200px',
+                    flexShrink: 0,
+                    overflow: 'hidden',
+                    background: '#e8ecf0',
+                    position: 'relative',
+                  }}
+                  className="product-img-wrap"
+                >
+                  <img
+                    src={tech.image}
+                    alt={tech.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                    onError={e => {
+                      e.target.style.display = 'none';
+                      e.target.parentNode.style.background = 'linear-gradient(135deg, #0d1b2a, #1a3a5c)';
+                    }}
+                  />
+                </div>
+
+                {/* Content */}
+                <div
+                  style={{
+                    flex: 1,
+                    padding: '2rem 2.5rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    gap: '0.75rem',
+                  }}
+                  className="product-card-content"
+                >
+                  {/* Technology number badge */}
+                  <span style={{
+                    display: 'inline-block',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#1e5fa3',
+                    fontFamily: 'Barlow, sans-serif',
+                  }}>
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+
+                  {/* Title */}
+                  <h3
+                    style={{
+                      fontSize: '20px',
+                      fontWeight: '700',
+                      color: '#1a1a2a',
+                      fontFamily: 'Barlow, sans-serif',
+                      lineHeight: 1.3,
+                      margin: 0,
+                    }}
+                  >
+                    {tech.title}
+                  </h3>
+
+                  {/* Divider */}
+                  <div style={{ width: '40px', height: '3px', background: '#1e5fa3', borderRadius: '2px' }} />
+
+                  {/* Description */}
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      color: '#4b5563',
+                      lineHeight: 1.75,
+                      margin: 0,
+                    }}
+                  >
+                    {tech.description}
+                  </p>
+                </div>
+              </div>
             ))}
           </AnimatedSection>
 
-          {filteredTech.length === 0 && (
-            <div className="text-center text-[#666] py-12">
-              No technologies found for the selected category.
-            </div>
-          )}
         </div>
       </section>
     </>
