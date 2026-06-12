@@ -88,7 +88,7 @@ app.post('/api/enquiry', async (req, res) => {
       },
       body: JSON.stringify({
         from: process.env.FROM_EMAIL || "ANDE Enquiry <onboarding@resend.dev>",
-        to: process.env.TO_EMAIL || "info@andeiptl.com",
+        to: process.env.TO_EMAIL || "info@andeitpl.com",
         reply_to: email, // Set the Reply-To header to the submitter's email
         subject: emailSubject,
         html: htmlContent
