@@ -65,6 +65,6 @@ ssh $VPS_USER@$VPS_IP << 'EOF'
   
   echo "=========================================================="
   echo "🎉 Deployment complete!"
-  echo "🌐 Your website should now be live at: https://ande.royal300.com"
+  echo "🌐 Your website should now be live at: https://www.andeitpl.com"
   echo "=========================================================="
 EOF

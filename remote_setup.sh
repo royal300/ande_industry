@@ -14,10 +14,10 @@ echo "Installing Nginx and Certbot..."
 apt-get -o Acquire::Retries=0 update || true
 apt-get install -y nginx certbot python3-certbot-nginx
 
-echo "Configuring Nginx for ande.royal300.com..."
+echo "Configuring Nginx for andeitpl.com and www.andeitpl.com..."
 echo "server {
     listen 80;
-    server_name ande.royal300.com;
+    server_name andeitpl.com www.andeitpl.com;
 
     location / {
         proxy_pass http://localhost:8095;
@@ -27,14 +27,14 @@ echo "server {
         proxy_set_header Host \$host;
         proxy_cache_bypass \$http_upgrade;
     }
-}" > /etc/nginx/sites-available/ande.royal300.com
+}" > /etc/nginx/sites-available/andeitpl.com
 
-ln -sf /etc/nginx/sites-available/ande.royal300.com /etc/nginx/sites-enabled/
+ln -sf /etc/nginx/sites-available/andeitpl.com /etc/nginx/sites-enabled/
 rm -f /etc/nginx/sites-enabled/default
 nginx -t
 systemctl restart nginx
 
 echo "Running Certbot to enable HTTPS..."
-certbot --nginx -d ande.royal300.com --non-interactive --agree-tos -m admin@royal300.com --redirect
+certbot --nginx -d andeitpl.com -d www.andeitpl.com --non-interactive --agree-tos -m admin@andeitpl.com --redirect
 
 echo "Setup Complete!"
