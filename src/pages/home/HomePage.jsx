@@ -211,9 +211,9 @@ function PerformanceSection() {
   const projects = trackRecordData[activeTab];
 
   const tabImages = {
-    metallurgical: '/images/hero_slide_1_1780751463278.webp',
-    power: '/images/tech_drying_1780751825785.webp',
-    mining: '/images/tech_grinding_1780751799211.webp'
+    metallurgical: '/Performance/Metallugurical/PlaceZouping.webp',
+    power: '/Performance/Powergenration/chengdon.webp',
+    mining: '/Performance/Beneficiation industry/pulverized.webp'
   };
 
   const handleTabChange = (tab) => {
@@ -479,35 +479,6 @@ function NewsSection() {
   );
 }
 
-/* ──────────────── Newsletter Strip ──────────────── */
-function NewsletterStrip() {
-  return (
-    <section className="w-full py-12" style={{ background: '#1e5fa3' }}>
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <h2 className="text-white font-bold text-[24px]" style={{ fontFamily: 'Barlow, sans-serif' }}>
-          Stay updated on your industry
-        </h2>
-        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-          <input 
-            type="email" 
-            placeholder="Enter your email" 
-            className="w-full sm:w-[280px] px-5 py-3 rounded-sm text-[#333] outline-none"
-            style={{ background: '#ffffff', border: 'none' }}
-          />
-          <button 
-            className="px-6 py-3 font-semibold text-white uppercase tracking-wider rounded-sm transition-colors duration-200"
-            style={{ background: '#0d1b2a', fontSize: '14px' }}
-            onMouseEnter={(e) => e.currentTarget.style.background = '#1a3a5c'}
-            onMouseLeave={(e) => e.currentTarget.style.background = '#0d1b2a'}
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ──────────────── Home Page ──────────────── */
 export default function HomePage() {
   return (
@@ -519,7 +490,6 @@ export default function HomePage() {
       <ServicesSection />
       <InnovationSection />
       <NewsSection />
-      <NewsletterStrip />
     </>
   );
 }

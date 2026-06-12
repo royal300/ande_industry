@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import PageHero from '../../components/common/PageHero';
 import SectionHeader from '../../components/common/SectionHeader';
 import AnimatedSection from '../../components/common/AnimatedSection';
@@ -55,10 +54,9 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {servicesData.map((service) => (
-              <Link
+              <div
                 key={service.slug}
-                to={`/services/${service.slug}`}
-                className="block bg-white p-8 rounded-sm group transition-all duration-300 hover:-translate-y-2"
+                className="bg-white p-8 rounded-sm group transition-all duration-300 hover:shadow-lg"
                 style={{ border: '1px solid #e8e8e8', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.08)';
@@ -89,14 +87,10 @@ export default function ServicesPage() {
                   {service.title}
                 </h3>
                 
-                <p className="text-[#666666] text-[14px] line-clamp-3 mb-6" style={{ lineHeight: 1.7 }}>
+                <p className="text-[#666666] text-[14px]" style={{ lineHeight: 1.7 }}>
                   {service.description}
                 </p>
-                
-                <div className="mt-auto text-[13px] font-semibold flex items-center transition-transform group-hover:translate-x-1" style={{ color: '#1e5fa3', letterSpacing: '0.5px' }}>
-                  Learn More <span className="ml-1">→</span>
-                </div>
-              </Link>
+              </div>
             ))}
           </AnimatedSection>
         </div>

@@ -1,76 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import PageHero from '../../components/common/PageHero';
 import AnimatedSection from '../../components/common/AnimatedSection';
 import { performanceData } from '../../data/performanceData';
-
-/* ──────────────── Stats Bar ──────────────── */
-const statsData = [
-  { value: 150, label: '150+ Employees', suffix: '+' },
-  { value: 90, label: '90+ Systems Commissioned', suffix: '+' },
-  { value: 110, label: '110+ Projects Completed', suffix: '+' },
-  { value: 30, label: '30+ Years Experience', suffix: '+' },
-];
-
-function useCounter(endValue, duration = 1500) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !started) {
-          setStarted(true);
-          let start = 0;
-          const increment = endValue / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= endValue) {
-              setCount(endValue);
-              clearInterval(timer);
-            } else {
-              setCount(Math.ceil(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [endValue, duration, started]);
-
-  return { count, ref };
-}
-
-function StatItem({ item }) {
-  const { count, ref } = useCounter(item.value);
-  return (
-    <div ref={ref} className="text-center px-4">
-      <div className="font-bold text-white mb-1" style={{ fontFamily: 'Barlow, sans-serif', fontSize: '36px' }}>
-        {count}{item.suffix}
-      </div>
-      <div className="text-white" style={{ fontSize: '14px', opacity: 0.85 }}>
-        {item.label}
-      </div>
-    </div>
-  );
-}
-
-function StatsBar() {
-  return (
-    <section className="w-full py-12" style={{ background: '#1e5fa3' }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-white divide-opacity-20">
-          {statsData.map((stat, i) => (
-            <StatItem key={i} item={stat} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const tabs = ['All', 'Metallurgical', 'Power Generation', 'Beneficiation', 'Chemical'];
 
@@ -89,7 +20,6 @@ export default function PerformancePage() {
         breadcrumb="Home / Performance"
       />
 
-      <StatsBar />
 
       <section className="py-20" style={{ background: '#f5f7fa' }}>
         <div className="max-w-7xl mx-auto px-6">
@@ -140,7 +70,7 @@ export default function PerformancePage() {
                     {project.description}
                   </p>
                   
-                  <div className="mt-auto space-y-2 mb-6">
+                  <div className="mt-auto space-y-2">
                     <div className="flex items-center gap-2 text-[#888888] text-[13px]">
                       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                       {project.location}
@@ -150,14 +80,6 @@ export default function PerformancePage() {
                       {project.capacity}
                     </div>
                   </div>
-
-                  <Link 
-                    to={`/performance`} 
-                    className="text-[14px] font-semibold flex items-center transition-transform group-hover:translate-x-1"
-                    style={{ color: '#1e5fa3' }}
-                  >
-                    View Case <span className="ml-1">→</span>
-                  </Link>
                 </div>
               </div>
             ))}

@@ -9,9 +9,7 @@ import ProductsPage from './pages/products/ProductsPage';
 import ProductDetailPage from './pages/products/ProductDetailPage';
 import CategoryProductPage from './pages/products/CategoryProductPage';
 import PerformancePage from './pages/performance/PerformancePage';
-import PerformanceDetailPage from './pages/performance/PerformanceDetailPage';
 import ServicesPage from './pages/services/ServicesPage';
-import ServiceDetailPage from './pages/services/ServiceDetailPage';
 import InnovationPage from './pages/innovation/InnovationPage';
 import CompanyPage from './pages/company/CompanyPage';
 import CulturePage from './pages/company/CulturePage';
@@ -38,13 +36,10 @@ function App() {
           <Route path="/products/:slug" element={<ProductDetailPage />} />
           
           <Route path="/performance" element={<PerformancePage />} />
-          <Route path="/performance/:industry" element={<PerformanceDetailPage />} />
           
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:slug" element={<ServiceDetailPage />} />
           
           <Route path="/innovation" element={<InnovationPage />} />
-          <Route path="/innovation/:slug" element={<InnovationPage />} /> {/* Same page component for tabs */}
           
           <Route path="/company" element={<CompanyPage />} />
           <Route path="/company/culture" element={<CulturePage />} />
